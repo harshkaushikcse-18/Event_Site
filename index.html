@@ -1,182 +1,254 @@
-<!-- File: index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AICTE Sponsored National Seminar - Central University of Haryana</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Gen Communication with AI &amp; IoT — National Seminar, CUH</title>
+<meta name="description" content="AICTE Sponsored Two-Day National Seminar on Towards Next Gen Communication with Artificial Intelligence and IoT, 15–16 Oct 2026, Central University of Haryana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Moving NOC Ticker / Tag -->
-    <div class="noc-ticker-container">
-        <div class="noc-ticker">
-            <span data-en="⚠️ Important Update: Participants are required to submit their NOC (No Objection Certificate) for the seminar. Download the format and event schedule below." data-hi="⚠️ महत्वपूर्ण अपडेट: प्रतिभागियों को संगोष्ठी के लिए अपना एनओसी (अनापत्ति प्रमाण पत्र) जमा करना आवश्यक है। नीचे दिए गए प्रारूप और कार्यक्रम समय सारणी को डाउनलोड करें।">
-                ⚠️ Important Update: Participants are required to submit their NOC (No Objection Certificate) for the seminar. Download the format and event schedule below.
-            </span>
-        </div>
-    </div>
+<!-- decorative circuit-node canvas behind hero -->
+<canvas id="netCanvas"></canvas>
 
-    <div class="top-bar">
-        <div class="lang-switch">
-            <button id="en-btn" class="active-lang" onclick="setLanguage('en')">English</button>
-            <button id="hi-btn" onclick="setLanguage('hi')">हिंदी</button>
-        </div>
-    </div>
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
 
-    <nav>
-        <a href="#about-uni" data-en="About University" data-hi="विश्वविद्यालय के बारे में">About University</a>
-        <a href="#about-dept" data-en="About Dept" data-hi="विभाग के बारे में">About Dept</a>
-        <a href="#objectives" data-en="Objectives" data-hi="उद्देश्य">Objectives</a>
-        <a href="#contents" data-en="Contents" data-hi="विषय-सूची">Contents</a>
-        <a href="#participants" data-en="Participants" data-hi="सहभागी">Participants</a>
-        <a href="#contact" data-en="Contact" data-hi="संपर्क">Contact</a>
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <img src="https://www.cuh.ac.in/logo.png" alt="Central University of Haryana" class="brand-logo" onerror="this.style.display='none'">
+      <span class="brand-text">
+        <strong data-en="Central University of Haryana" data-hi="केंद्रीय विश्वविद्यालय हरियाणा">Central University of Haryana</strong>
+        <em data-en="Dept. of Computer Science &amp; Engineering" data-hi="कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग">Dept. of Computer Science &amp; Engineering</em>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="#topics" data-en="Topics" data-hi="विषय">Topics</a>
+      <a href="#schedule" data-en="Schedule" data-hi="कार्यक्रम">Schedule</a>
+      <a href="#speakers" data-en="Speakers" data-hi="वक्ता">Speakers</a>
+      <a href="#participants" data-en="Who Should Attend" data-hi="प्रतिभागी">Who Should Attend</a>
+      <a href="#contact" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="#register" class="nav-cta" data-en="Register" data-hi="पंजीकरण">Register</a>
     </nav>
 
-    <div class="banner-wrapper">
-        <div class="banner-container">
-            <img src="logo.png" alt="Seminar Banner" class="hero-banner">
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-opt" data-val="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-val="hi">हिं</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow-row">
+        <span class="pill pill-aicte">
+          <svg class="diya-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 2c1.5 2 1.5 4-.3 5.6C10.2 9.2 10 10.4 11 11c1.2.7 2.4-.2 2-1.6C14.8 10.6 16 12.4 16 14c0 2.2-1.8 4-4 4s-4-1.8-4-4c0-1.4.7-2.6 1.7-3.4C8.6 9.4 9 8 9 6.6 9 4.8 10.2 3.2 12 2z" fill="currentColor"/></svg>
+          <span data-en="AICTE Sponsored" data-hi="AICTE प्रायोजित">AICTE Sponsored</span>
+        </span>
+        <span class="pill pill-outline" data-en="Two-Day National Seminar" data-hi="दो दिवसीय राष्ट्रीय संगोष्ठी">Two-Day National Seminar</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span data-en="Towards Next&nbsp;Gen Communication with" data-hi="कृत्रिम बुद्धिमत्ता और IoT के साथ">Towards Next&nbsp;Gen Communication with</span>
+        <span class="hero-title-accent" data-en="Artificial Intelligence &amp; IoT" data-hi="अगली पीढ़ी के संचार की ओर">Artificial Intelligence &amp; IoT</span>
+      </h1>
+
+      <p class="hero-sub" data-en="Two days of keynotes, hands-on demos and open-source tooling on 5G, IoT and Machine Learning — hosted by the Department of Computer Science &amp; Engineering, Central University of Haryana." data-hi="5G, IoT और मशीन लर्निंग पर मुख्य वक्तव्य, व्यावहारिक प्रदर्शन और ओपन-सोर्स टूल्स के दो दिन — कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, केंद्रीय विश्वविद्यालय हरियाणा द्वारा आयोजित।">
+        Two days of keynotes, hands-on demos and open-source tooling on 5G, IoT and Machine Learning — hosted by the Department of Computer Science &amp; Engineering, Central University of Haryana.
+      </p>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label" data-en="Dates" data-hi="तिथियाँ">Dates</span>
+          <span class="meta-value">15–16 Oct 2026</span>
         </div>
-    </div>
-
-    <div class="container">
-        
-        <section id="about-uni">
-            <h3 data-en="About the University" data-hi="विश्वविद्यालय के बारे में">About the University</h3>
-            <p data-en="Central University of Haryana is a Central University established under the Central Universities Act, 2009 of the Parliament. It is one of the 15 Central Universities established by MHRD, GoI under the XIth Five Year Plan (2007-12). The University is fully funded by the UGC. The university is awarded A grade by NAAC. Central University of Haryana is one of the renowned central universities in India offering various undergraduate programs in Engineering & postgraduate programs under multiple streams including Arts, Science, Commerce, Management, Computer Applications, Library Science, etc. Apart from these, it also offers research courses in several specializations under Arts, Science and engineering." 
-               data-hi="हरियाणा केंद्रीय विश्वविद्यालय, संसद के केंद्रीय विश्वविद्यालय अधिनियम, 2009 के तहत स्थापित एक केंद्रीय विश्वविद्यालय है। यह ग्यारहवीं पंचवर्षीय योजना (2007-12) के तहत एमएचआरडी, भारत सरकार द्वारा स्थापित 15 केंद्रीय विश्वविद्यालयों में से एक है। विश्वविद्यालय को यूजीसी द्वारा पूरी तरह से वित्त पोषित किया गया है। विश्वविद्यालय को NAAC द्वारा 'A' ग्रेड से सम्मानित किया गया है। हरियाणा केंद्रीय विश्वविद्यालय भारत के प्रसिद्ध केंद्रीय विश्वविद्यालयों में से एक है जो इंजीनियरिंग में विभिन्न स्नातक कार्यक्रम और कला, विज्ञान, वाणिज्य, प्रबंधन, कंप्यूटर अनुप्रयोग, पुस्तकालय विज्ञान आदि सहित कई धाराओं के तहत स्नातकोत्तर कार्यक्रम प्रदान करता है। इसके अलावा, यह कला, विज्ञान और इंजीनियरिंग के तहत कई विशेषज्ञता में अनुसंधान पाठ्यक्रम भी प्रदान करता है।">
-               Central University of Haryana is a Central University established under the Central Universities Act, 2009 of the Parliament. It is one of the 15 Central Universities established by MHRD, GoI under the XIth Five Year Plan (2007-12). The University is fully funded by the UGC. The university is awarded A grade by NAAC. Central University of Haryana is one of the renowned central universities in India offering various undergraduate programs in Engineering & postgraduate programs under multiple streams including Arts, Science, Commerce, Management, Computer Applications, Library Science, etc. Apart from these, it also offers research courses in several specializations under Arts, Science and engineering.
-            </p>
-        </section>
-
-        <section id="about-dept">
-            <h3 data-en="About the Department" data-hi="विभाग के बारे में">About the Department</h3>
-            <p data-en="The Department of Computer Science and Engineering started in the year 2016 under the umbrella of the School of Engineering & Technology with the aim to impart high quality and practical education to the students in the field of Computer Science and Engineering. The department is currently offering a B. Tech., M.Tech. and PhD programme in CSE. The department has a highly qualified faculty members who are working on the thrust areas like WSN, Cloud Computing, Network Security, Computer Vision and Multimedia, IoT and Health Informatics, Machine Learning and Data Mining etc."
-               data-hi="कंप्यूटर विज्ञान और इंजीनियरिंग विभाग की शुरुआत वर्ष 2016 में स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी के छत्रछाया में कंप्यूटर विज्ञान और इंजीनियरिंग के क्षेत्र में छात्रों को उच्च गुणवत्ता और व्यावहारिक शिक्षा प्रदान करने के उद्देश्य से की गई थी। विभाग वर्तमान में सीएसई में बी.टेक, एम.टेक और पीएचडी कार्यक्रम प्रदान कर रहा है। विभाग में अत्यधिक योग्य संकाय सदस्य हैं जो WSN, क्लाउड कंप्यूटिंग, नेटवर्क सुरक्षा, कंप्यूटर विजन और मल्टीमीडिया, IoT और हेल्थ इंफॉर्मेटिक्स, मशीन लर्निंग और डेटा माइनिंग आदि जैसे प्रमुख क्षेत्रों पर काम कर रहे हैं।">
-               The Department of Computer Science and Engineering started in the year 2016 under the umbrella of the School of Engineering & Technology with the aim to impart high quality and practical education to the students in the field of Computer Science and Engineering. The department is currently offering a B. Tech., M.Tech. and PhD programme in CSE. The department has a highly qualified faculty members who are working on the thrust areas like WSN, Cloud Computing, Network Security, Computer Vision and Multimedia, IoT and Health Informatics, Machine Learning and Data Mining etc.
-            </p>
-        </section>
-
-        <section id="objectives">
-            <h3 data-en="Key Objectives & Expected Outcomes" data-hi="मुख्य उद्देश्य और अपेक्षित परिणाम">Key Objectives & Expected Outcomes</h3>
-            <ul data-en-list='[
-                "Train researchers and academicians in basic technologies of 5G, IoT, and Machine Learning.",
-                "Deliver practical sessions on IoT, Raspberry Pi, Arduino with Data Analytics and Machine Learning integration.",
-                "Provide cavernous understanding of IoT algorithms for researchers and practitioners.",
-                "Integrate advanced networks in research and development activities at higher education levels."
-            ]' 
-               data-hi-list='[
-                "शोधकर्ताओं और शिक्षाविदों को 5G, IoT और मशीन लर्निंग की बुनियादी तकनीकों में प्रशिक्षित करना।",
-                "डेटा एनालिटिक्स और मशीन लर्निंग एकीकरण के साथ IoT, रास्पबेरी पाई, Arduino पर व्यावहारिक सत्र प्रदान करना।",
-                "शोधकर्ताओं और चिकित्सकों के लिए IoT एल्गोरिदम की गहरी समझ प्रदान करना।",
-                "उच्च शिक्षा स्तर पर अनुसंधान और विकास गतिविधियों में उन्नत नेटवर्क को एकीकृत करना।"
-            ]'>
-                <li>Train researchers and academicians in basic technologies of 5G, IoT, and Machine Learning.</li>
-                <li>Deliver practical sessions on IoT, Raspberry Pi, Arduino with Data Analytics and Machine Learning integration.</li>
-                <li>Provide cavernous understanding of IoT algorithms for researchers and practitioners.</li>
-                <li>Integrate advanced networks in research and development activities at higher education levels.</li>
-            </ul>
-        </section>
-
-        <section id="contents">
-            <h3 data-en="Tentative Contents to be Covered" data-hi="कवर किए जाने वाले संभावित विषय">Tentative Contents to be Covered</h3>
-            <ul data-en-list='[
-                "Introduction to 5G, IoT, and Machine Learning",
-                "IoT and Mobile Applications",
-                "WSN 802.15.4 (Zigbee) & 802.15.1 (Bluetooth) Standards",
-                "IoT Implementation using simulator/kit (Arduino)",
-                "Applications of IoT in Rural Development",
-                "Machine Learning Techniques for Big Data Analytics",
-                "Hands-on and Demo on Healthcare sensor using IoT and Machine Learning",
-                "Big Data Analytics on Cloud & 6G and Beyond"
-            ]'
-               data-hi-list='[
-                "5G, IoT और मशीन लर्निंग का परिचय",
-                "IoT और मोबाइल एप्लिकेशन",
-                "WSN 802.15.4 (Zigbee) और 802.15.1 (Bluetooth) मानक",
-                "सिम्युलेटर/किट (Arduino) का उपयोग करके IoT कार्यान्वयन",
-                "ग्रामीण विकास में IoT के अनुप्रयोग",
-                "बिग डेटा एनालिटिक्स के लिए मशीन लर्निंग तकनीक",
-                "IoT और मशीन लर्निंग का उपयोग करके हेल्थकेयर सेंसर पर व्यावहारिक और डेमो",
-                "क्लाउड पर बिग डेटा एनालिटिक्स और 6G व उससे आगे"
-            ]'>
-                <li>Introduction to 5G, IoT, and Machine Learning</li>
-                <li>IoT and Mobile Applications</li>
-                <li>WSN 802.15.4 (Zigbee) & 802.15.1 (Bluetooth) Standards</li>
-                <li>IoT Implementation using simulator/kit (Arduino)</li>
-                <li>Applications of IoT in Rural Development</li>
-                <li>Machine Learning Techniques for Big Data Analytics</li>
-                <li>Hands-on and Demo on Healthcare sensor using IoT and Machine Learning</li>
-                <li>Big Data Analytics on Cloud & 6G and Beyond</li>
-            </ul>
-        </section>
-
-        <section id="participants">
-            <h3 data-en="Targeted Participants & Downloads" data-hi="लक्षित प्रतिभागी और डाउनलोड्स">Targeted Participants & Downloads</h3>
-            <ul data-en-list='[
-                "Faculty Members & Research Scholars",
-                "Software Developers & Network Engineers",
-                "Data Analysts & Young Engineers",
-                "Anyone interested in learning IoT concepts and applications.",
-                "Mandatory requirement: All participants must submit their signed NOC during registration."
-            ]'
-               data-hi-list='[
-                "संकाय सदस्य और अनुसंधान विद्वान",
-                "सॉफ्टवेयर डेवलपर्स और नेटवर्क इंजीनियर्स",
-                "डेटा विश्लेषक और युवा इंजीनियर",
-                "IoT अवधारणाओं और अनुप्रयोगों को सीखने में रुचि रखने वाला कोई भी व्यक्ति।",
-                "अनिवार्य आवश्यकता: सभी प्रतिभागियों को पंजीकरण के दौरान अपना हस्ताक्षर किया हुआ NOC जमा करना होगा।"
-            ]'>
-                <li>Faculty Members & Research Scholars</li>
-                <li>Software Developers & Network Engineers</li>
-                <li>Data Analysts & Young Engineers</li>
-                <li>Anyone interested in learning IoT concepts and applications.</li>
-            </ul>
-            
-            <div class="action-buttons">
-                <div class="download-row">
-                    <a href="NOC_Format.pdf" download="Seminar_NOC_Format.pdf" class="noc-btn" data-en="📥 Download NOC Format (PDF)" data-hi="📥 NOC प्रारूप डाउनलोड करें (PDF)">📥 Download NOC Format (PDF)</a>
-                    <a href="englishtimetable.pdf" download="TimeTable_English.pdf" class="schedule-btn" data-en="📅 Download Time Table (English)" data-hi="📅 समय सारणी डाउनलोड करें (अंग्रेजी)">📅 Download Time Table (English)</a>
-                    <a href="TimeTable_Hindi.pdf" download="TimeTable_Hindi.pdf" class="schedule-btn" data-en="📅 Download Time Table (Hindi)" data-hi="📅 समय सारणी डाउनलोड करें (हिंदी)">📅 Download Time Table (Hindi)</a>
-                </div>
-                <button id="register-btn" data-en="Register Now" data-hi="अभी पंजीकरण करें">Register Now</button>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h3 data-en="Contact Details" data-hi="संपर्क विवरण">Contact Details</h3>
-            <div class="grid-2">
-                <div class="contact-card">
-                    <h4 data-en="Dr. Rakesh Kumar" data-hi="डॉ. राकेश कुमार">Dr. Rakesh Kumar</h4>
-                    <p><span data-en="Coordinator" data-hi="समन्वयक">Coordinator</span><br><span data-en="Professor & Former Head, Dept. of CSE" data-hi="प्रोफेसर और पूर्व प्रमुख, सीएसई विभाग">Professor & Former Head, Dept. of CSE</span></p>
-                    <p><small><span data-en="Phone" data-hi="फ़ोन">Phone</span>: +91-1285-260188 (O)<br><span data-en="Mobile" data-hi="मोबाइल">Mobile</span>: +91-9416327669</small></p>
-                </div>
-                <div class="contact-card">
-                    <h4 data-en="Dr. Nitin Goyal" data-hi="डॉ. नितिन गोयल">Dr. Nitin Goyal</h4>
-                    <p><span data-en="Co-Coordinator" data-hi="सह-समन्वयक">Co-Coordinator</span><br><span data-en="Asst. Professor, Dept. of CSE" data-hi="सहायक प्रोफेसर, सीएसई विभाग">Asst. Professor, Dept. of CSE</span></p>
-                    <p><small><span data-en="Phone" data-hi="फ़ोन">Phone</span>: +91-1285-260247 (O)<br><span data-en="Mobile" data-hi="मोबाइल">Mobile</span>: +91-9896530089</small></p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p data-en="&copy; 2026 Central University of Haryana. All Rights Reserved." data-hi="&copy; 2026 हरियाणा केंद्रीय विश्वविद्यालय। सर्वाधिकार सुरक्षित।">&copy; 2026 Central University of Haryana. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Modal -->
-    <div id="regModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 data-en="Registration Notice" data-hi="पंजीकरण सूचना" style="margin-top:1rem;">Registration Notice</h3>
-            <p data-en="Registration links and details will open soon. Please make sure to download and attach your filled NOC file along with the time table reference." 
-               data-hi="पंजीकरण लिंक और विवरण शीघ्र ही खुलेंगे। कृपया समय सारणी संदर्भ के साथ अपनी भरी हुई NOC फ़ाइल डाउनलोड करके संलग्न करना सुनिश्चित करें।" 
-               style="margin: 1rem 0;">Registration links and details will open soon. Please make sure to download and attach your filled NOC file along with the time table reference.</p>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label" data-en="Venue" data-hi="स्थान">Venue</span>
+          <span class="meta-value" data-en="Central University of Haryana, Mahendergarh" data-hi="केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़">Central University of Haryana, Mahendergarh</span>
         </div>
-    </div>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="hero-actions">
+        <a href="#register" class="btn btn-primary" data-en="Register Interest" data-hi="पंजीकरण करें">Register Interest</a>
+        <a href="#schedule" class="btn btn-ghost" data-en="View Schedule" data-hi="कार्यक्रम देखें">View Schedule</a>
+      </div>
+
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label" data-en="Days" data-hi="दिन">Days</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label" data-en="Hours" data-hi="घंटे">Hours</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdMins">00</span><span class="cd-label" data-en="Mins" data-hi="मिनट">Mins</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdSecs">00</span><span class="cd-label" data-en="Secs" data-hi="सेकंड">Secs</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="section-eyebrow" data-en="01 — About" data-hi="०१ — परिचय">01 — About</p>
+      <div class="about-grid">
+        <article class="about-card">
+          <h2 data-en="About the University" data-hi="विश्वविद्यालय के बारे में">About the University</h2>
+          <p data-en="Central University of Haryana is a Central University established under the Central Universities Act, 2009 of the Parliament — one of 15 Central Universities set up by the MHRD, GoI under the XIth Five Year Plan (2007–12). Fully funded by the UGC and awarded 'A' Grade by NAAC, CUH offers undergraduate programs in Engineering and postgraduate programs across Arts, Science, Commerce, Management, Computer Applications and Library Science, alongside research programmes in Arts, Science and Engineering." data-hi="केंद्रीय विश्वविद्यालय हरियाणा संसद के केंद्रीय विश्वविद्यालय अधिनियम, 2009 के तहत स्थापित एक केंद्रीय विश्वविद्यालय है। यह MHRD, GoI द्वारा ग्यारहवीं पंचवर्षीय योजना (2007-12) के तहत स्थापित 15 केंद्रीय विश्वविद्यालयों में से एक है। विश्वविद्यालय पूरी तरह से UGC द्वारा वित्त पोषित है और NAAC द्वारा A ग्रेड से सम्मानित है। CUH इंजीनियरिंग में स्नातक कार्यक्रम और कला, विज्ञान, वाणिज्य, प्रबंधन, कंप्यूटर अनुप्रयोग व पुस्तकालय विज्ञान सहित कई धाराओं में स्नातकोत्तर कार्यक्रम प्रदान करता है, साथ ही कला, विज्ञान और इंजीनियरिंग में शोध पाठ्यक्रम भी प्रदान करता है।">
+            Central University of Haryana is a Central University established under the Central Universities Act, 2009 of the Parliament — one of 15 Central Universities set up by the MHRD, GoI under the XIth Five Year Plan (2007–12). Fully funded by the UGC and awarded 'A' Grade by NAAC, CUH offers undergraduate programs in Engineering and postgraduate programs across Arts, Science, Commerce, Management, Computer Applications and Library Science, alongside research programmes in Arts, Science and Engineering.
+          </p>
+        </article>
+        <article class="about-card">
+          <h2 data-en="About the Department" data-hi="विभाग के बारे में">About the Department</h2>
+          <p data-en="The Department of Computer Science and Engineering started in 2016 under the School of Engineering &amp; Technology, aiming to impart high-quality, practical education in CSE. The department currently offers B.Tech, M.Tech and PhD programmes, with faculty working across WSN, Cloud Computing, Network Security, Computer Vision &amp; Multimedia, IoT &amp; Health Informatics, and Machine Learning &amp; Data Mining." data-hi="कंप्यूटर विज्ञान और इंजीनियरिंग विभाग की शुरुआत वर्ष 2016 में स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी के अंतर्गत हुई थी, जिसका उद्देश्य CSE में उच्च गुणवत्ता और व्यावहारिक शिक्षा प्रदान करना है। विभाग वर्तमान में B.Tech., M.Tech. और PhD कार्यक्रम प्रदान करता है, जिसके संकाय सदस्य WSN, क्लाउड कंप्यूटिंग, नेटवर्क सुरक्षा, कंप्यूटर विजन और मल्टीमीडिया, IoT और स्वास्थ्य सूचना विज्ञान, तथा मशीन लर्निंग और डेटा माइनिंग जैसे क्षेत्रों पर कार्यरत हैं।">
+            The Department of Computer Science and Engineering started in 2016 under the School of Engineering &amp; Technology, aiming to impart high-quality, practical education in CSE. The department currently offers B.Tech, M.Tech and PhD programmes, with faculty working across WSN, Cloud Computing, Network Security, Computer Vision &amp; Multimedia, IoT &amp; Health Informatics, and Machine Learning &amp; Data Mining.
+          </p>
+        </article>
+      </div>
+
+      <div class="objectives-outcomes">
+        <div class="oo-col">
+          <h3 data-en="Objectives" data-hi="उद्देश्य">Objectives</h3>
+          <ul class="check-list">
+            <li data-en="Train researchers and academicians in the basic technologies of 5G, IoT and Machine Learning." data-hi="शोधकर्ताओं और शिक्षाविदों को 5G, IoT और मशीन लर्निंग की बुनियादी तकनीकों में प्रशिक्षित करना।">Train researchers and academicians in the basic technologies of 5G, IoT and Machine Learning.</li>
+            <li data-en="Deliver practical sessions on IoT, Raspberry Pi and Arduino integrated with Data Analytics and ML approaches." data-hi="डेटा एनालिटिक्स और ML दृष्टिकोणों के साथ IoT, Raspberry Pi और Arduino पर व्यावहारिक सत्र प्रदान करना।">Deliver practical sessions on IoT, Raspberry Pi and Arduino integrated with Data Analytics and ML approaches.</li>
+            <li data-en="Present a deep understanding of IoT algorithms for researchers and practitioners." data-hi="शोधकर्ताओं और व्यवसायियों के लिए IoT एल्गोरिदम की गहन समझ प्रस्तुत करना।">Present a deep understanding of IoT algorithms for researchers and practitioners.</li>
+            <li data-en="Integrate advanced networks into research &amp; development activities at master's/doctorate level." data-hi="मास्टर्स/डॉक्टरेट स्तर पर शोध व विकास गतिविधियों में उन्नत नेटवर्क को एकीकृत करना।">Integrate advanced networks into research &amp; development activities at master's/doctorate level.</li>
+          </ul>
+        </div>
+        <div class="oo-col">
+          <h3 data-en="Expected Outcome" data-hi="अपेक्षित परिणाम">Expected Outcome</h3>
+          <p class="oo-lead" data-en="The seminar focuses on addressing key aspects with hands-on implementation:" data-hi="संगोष्ठी कार्यान्वयन के साथ प्रमुख पहलुओं को संबोधित करने पर केंद्रित है:">The seminar focuses on addressing key aspects with hands-on implementation:</p>
+          <ul class="tag-list">
+            <li data-en="5G Technology" data-hi="5G प्रौद्योगिकी">5G Technology</li>
+            <li data-en="Internet of Things" data-hi="इंटरनेट ऑफ थिंग्स">Internet of Things</li>
+            <li data-en="Machine Learning" data-hi="मशीन लर्निंग">Machine Learning</li>
+            <li data-en="Network Data Analytics" data-hi="नेटवर्क डेटा एनालिटिक्स">Network Data Analytics</li>
+          </ul>
+          <p data-en="Attendees will leave technically competent in the basic concepts of 5G, IoT and Machine Learning, with exposure to open-source tools for building and evaluating predictors." data-hi="प्रतिभागी 5G, IoT और मशीन लर्निंग की बुनियादी अवधारणाओं में तकनीकी रूप से सक्षम होंगे, साथ ही भविष्यवाणी मॉडल बनाने व मूल्यांकन हेतु ओपन-सोर्स टूल्स से परिचित होंगे।">Attendees will leave technically competent in the basic concepts of 5G, IoT and Machine Learning, with exposure to open-source tools for building and evaluating predictors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOPICS ============ -->
+  <section class="section section-alt" id="topics">
+    <div class="section-inner">
+      <p class="section-eyebrow" data-en="02 — Coverage" data-hi="०२ — विषय">02 — Coverage</p>
+      <h2 class="section-title" data-en="Tentative Contents to be Covered" data-hi="संगोष्ठी में शामिल किए जाने वाले विषय">Tentative Contents to be Covered</h2>
+      <div class="topics-grid" id="topicsGrid">
+        <!-- injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCHEDULE ============ -->
+  <section class="section" id="schedule">
+    <div class="section-inner">
+      <p class="section-eyebrow" data-en="03 — Schedule" data-hi="०३ — कार्यक्रम">03 — Schedule</p>
+      <h2 class="section-title" data-en="Two-Day Programme" data-hi="दो-दिवसीय कार्यक्रम">Two-Day Programme</h2>
+
+      <div class="day-tabs" role="tablist">
+        <button class="day-tab active" data-day="1" role="tab">
+          <span class="day-tab-num">15.10.2026</span>
+          <span class="day-tab-name" data-en="Thursday — Day 1" data-hi="गुरुवार — दिन 1">Thursday — Day 1</span>
+        </button>
+        <button class="day-tab" data-day="2" role="tab">
+          <span class="day-tab-num">16.10.2026</span>
+          <span class="day-tab-name" data-en="Friday — Day 2" data-hi="शुक्रवार — दिन 2">Friday — Day 2</span>
+        </button>
+      </div>
+
+      <div class="schedule-rail" id="scheduleRail">
+        <!-- injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPEAKERS ============ -->
+  <section class="section section-alt" id="speakers">
+    <div class="section-inner">
+      <p class="section-eyebrow" data-en="04 — Resource Persons" data-hi="०४ — संसाधन व्यक्ति">04 — Resource Persons</p>
+      <h2 class="section-title" data-en="Speakers &amp; Sessions" data-hi="वक्ता एवं सत्र">Speakers &amp; Sessions</h2>
+      <div class="speakers-grid" id="speakersGrid"><!-- injected by JS --></div>
+    </div>
+  </section>
+
+  <!-- ============ PARTICIPANTS ============ -->
+  <section class="section" id="participants">
+    <div class="section-inner participants-inner">
+      <div>
+        <p class="section-eyebrow" data-en="05 — Audience" data-hi="०५ — प्रतिभागी">05 — Audience</p>
+        <h2 class="section-title" data-en="Who Should Attend" data-hi="लक्षित प्रतिभागी">Who Should Attend</h2>
+        <p class="participants-note" data-en="Any other person who wants to learn the concepts of IoT and its applications is welcome to attend." data-hi="कोई भी अन्य व्यक्ति जो IoT और इसके अनुप्रयोगों की अवधारणाओं को सीखना चाहता है, वह भाग ले सकता है।">Any other person who wants to learn the concepts of IoT and its applications is welcome to attend.</p>
+      </div>
+      <ul class="participants-list">
+        <li data-en="Faculty Members" data-hi="संकाय सदस्य">Faculty Members</li>
+        <li data-en="Research Scholars" data-hi="शोध विद्वान">Research Scholars</li>
+        <li data-en="Software Developers" data-hi="सॉफ्टवेयर डेवलपर्स">Software Developers</li>
+        <li data-en="Network Engineers" data-hi="नेटवर्क इंजीनियर">Network Engineers</li>
+        <li data-en="Data Analysts" data-hi="डेटा विश्लेषक">Data Analysts</li>
+        <li data-en="Young Engineers" data-hi="युवा इंजीनियर">Young Engineers</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REGISTER ============ -->
+  <section class="section section-dark" id="register">
+    <div class="section-inner register-inner">
+      <p class="section-eyebrow section-eyebrow-light" data-en="06 — Registration" data-hi="०६ — पंजीकरण">06 — Registration</p>
+      <h2 class="section-title-light" data-en="Registration Opens Soon" data-hi="पंजीकरण शीघ्र प्रारंभ होगा">Registration Opens Soon</h2>
+      <p class="register-copy" data-en="The registration form and fee details will be published here. Check back closer to the seminar dates, or contact the coordinators below to be notified directly." data-hi="पंजीकरण फॉर्म और शुल्क विवरण यहाँ प्रकाशित किए जाएंगे। कृपया संगोष्ठी की तिथियों के निकट पुनः देखें, या सीधे सूचित होने के लिए नीचे दिए गए समन्वयकों से संपर्क करें।">The registration form and fee details will be published here. Check back closer to the seminar dates, or contact the coordinators below to be notified directly.</p>
+      <span class="coming-soon-badge" data-en="Coming Soon" data-hi="जल्द आ रहा है">Coming Soon</span>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <p class="section-eyebrow" data-en="07 — Contact" data-hi="०७ — संपर्क">07 — Contact</p>
+      <h2 class="section-title" data-en="Coordinators" data-hi="समन्वयक">Coordinators</h2>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <span class="contact-role" data-en="Coordinator" data-hi="समन्वयक">Coordinator</span>
+          <h3>Dr. Rakesh Kumar</h3>
+          <p data-en="Professor &amp; Former Head, Dept. of Computer Science &amp; Engineering, School of Engineering &amp; Technology, Central University of Haryana, Mahendergarh (Haryana)–123031" data-hi="प्रोफेसर एवं पूर्व अध्यक्ष, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031">Professor &amp; Former Head, Dept. of Computer Science &amp; Engineering, School of Engineering &amp; Technology, Central University of Haryana, Mahendergarh (Haryana)–123031</p>
+          <div class="contact-line"><span data-en="Phone" data-hi="फोन">Phone</span>: +91-1285-260188 (O), +91-9416327669 (M)</div>
+        </article>
+        <article class="contact-card">
+          <span class="contact-role" data-en="Co-Coordinator" data-hi="सह-समन्वयक">Co-Coordinator</span>
+          <h3>Dr. Nitin Goyal</h3>
+          <p data-en="Assistant Professor, Dept. of Computer Science &amp; Engineering, School of Engineering &amp; Technology, Central University of Haryana, Mahendergarh (Haryana)–123031" data-hi="सहायक प्रोफेसर, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031">Assistant Professor, Dept. of Computer Science &amp; Engineering, School of Engineering &amp; Technology, Central University of Haryana, Mahendergarh (Haryana)–123031</p>
+          <div class="contact-line"><span data-en="Phone" data-hi="फोन">Phone</span>: +91-1285-260247 (O), +91-9896530089 (M)</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong data-en="AICTE Sponsored National Seminar" data-hi="AICTE प्रायोजित राष्ट्रीय संगोष्ठी">AICTE Sponsored National Seminar</strong>
+      <span data-en="Department of Computer Science &amp; Engineering · Central University of Haryana" data-hi="कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग · केंद्रीय विश्वविद्यालय हरियाणा">Department of Computer Science &amp; Engineering · Central University of Haryana</span>
+    </div>
+    <div class="footer-meta">
+      <span>15–16 Oct 2026</span>
+      <span data-en="Mahendergarh, Haryana" data-hi="महेंद्रगढ़, हरियाणा">Mahendergarh, Haryana</span>
+    </div>
+  </div>
+  <div class="footer-bottom" data-en="© 2026 Central University of Haryana. All rights reserved." data-hi="© 2026 केंद्रीय विश्वविद्यालय हरियाणा। सर्वाधिकार सुरक्षित।">© 2026 Central University of Haryana. All rights reserved.</div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
