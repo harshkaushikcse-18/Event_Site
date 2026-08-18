@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* script.js */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-=======
+
 // File: script.js
 function setLanguage(lang) {
     document.getElementById('en-btn').classList.remove('active-lang');
@@ -436,4 +436,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
->>>>>>> e0f3ea5c87e2354d95dd288e91056e3f8b54342e
+
