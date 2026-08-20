@@ -78,15 +78,29 @@
 </header>
 
 <main id="top">
-
-  <section class="hero">
+<section class="hero">
     <div class="hero-inner">
-      <div class="eyebrow-row">
-        <div class="aicte-sponsor-wrap">
-          <img src="aictelogo.png" alt="AICTE Logo" class="aicte-logo-img" width="380" height="73">
-          <span data-en="Sponsored" data-hi="प्रायोजित">प्रायोजित</span>
+      <!-- Top Row with Logos on the sides and badges in the center -->
+      <div class="eyebrow-row" style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 1.5rem;">
+        
+        <!-- Left Logo (AICTE) -->
+        <div class="hero-logo-left">
+          <img src="aicte-logo.png" alt="AICTE Logo" style="height: 80px; width: auto; object-fit: contain;">
         </div>
-        <span class="pill pill-outline" data-en="Two-Day National Seminar" data-hi="दो दिवसीय राष्ट्रीय संगोष्ठी">दो दिवसीय राष्ट्रीय संगोष्ठी</span>
+
+        <!-- Center Badges -->
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <div class="aicte-sponsor-wrap">
+            <span data-en="AICTE Sponsored" data-hi="अ.भा.त.शि.प. प्रायोजित">प्रायोजित</span>
+          </div>
+          <span class="pill pill-outline" data-en="Two-Day National Seminar" data-hi="दो दिवसीय राष्ट्रीय संगोष्ठी">दो दिवसीय राष्ट्रीय संगोष्ठी</span>
+        </div>
+
+        <!-- Right Logo (Central University of Haryana) -->
+        <div class="hero-logo-right">
+          <img src="cuh-logo.png" alt="CUH Logo" style="height: 85px; width: auto; object-fit: contain;">
+        </div>
+
       </div>
 
       <h1 class="hero-title">
@@ -110,20 +124,93 @@
       </div>
 
       <div class="hero-actions">
-        <a href="#register" class="btn btn-primary" data-en="Register Interest" data-hi="पंजीकरण करें">पंजीकरण करें</a>
+        <a href="https://atalacademy.aicte.gov.in/" class="btn btn-primary" data-en="Register Interest" data-hi="पंजीकरण करें">पंजीकरण करें</a>
         <a href="sample-noc.pdf" id="heroDownloadBtn" class="btn btn-ghost" download="AICTE_NOC.pdf" data-en="Download NOC" data-hi="NOC डाउनलोड करें" style="border-color: var(--accent); color: var(--accent);">NOC डाउनलोड करें</a>
         <a href="#about" class="btn btn-ghost" data-en="Learn More" data-hi="और जानें">और जानें</a>
       </div>
 
-      <div class="countdown" id="countdown" aria-live="polite">
-        <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label" data-en="Days" data-hi="दिन">दिन</span></div>
-        <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label" data-en="Hours" data-hi="घंटे">घंटे</span></div>
-        <div class="cd-box"><span class="cd-num" id="cdMins">00</span><span class="cd-label" data-en="Mins" data-hi="मिनट">मिनट</span></div>
-        <div class="cd-box"><span class="cd-num" id="cdSecs">00</span><span class="cd-label" data-en="Secs" data-hi="सेकंड">सेकंड</span></div>
+      <!-- Free Registration Note Box -->
+      <div style="margin: -0.25rem 0 1.5rem 0; display: inline-block; padding: 0.6rem 1rem; background: rgba(var(--accent-rgb, 0, 123, 255), 0.08); border: 1px solid rgba(var(--accent-rgb, 0, 123, 255), 0.2); border-radius: 8px;">
+        <span style="font-size: 0.95rem; font-weight: 500;" data-en="✨ Free Registration — No Registration Fee Required" data-hi="✨ निःशुल्क पंजीकरण — कोई पंजीकरण शुल्क आवश्यक नहीं है">✨ निःशुल्क पंजीकरण — कोई पंजीकरण शुल्क आवश्यक नहीं है</span>
       </div>
+
+      <div class="countdown" id="countdown" aria-live="polite" style="margin-bottom: 2.5rem;">
+        <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label" data-en="Days" data-hi="दिन">दिन</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label" id="cdHours-label" data-en="Hours" data-hi="घंटे">घंटे</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdMins">00</span><span class="cd-label" id="cdMins-label" data-en="Mins" data-hi="मिनट">मिनट</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdSecs">00</span><span class="cd-label" id="cdSecs-label" data-en="Secs" data-hi="सेकंड">सेकंड</span></div>
+      </div>
+
+    
+        
+      <!-- 6-Column Leadership Grid Under Timer -->
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.75rem; width: 100%; text-align: center;">
+        
+        <!-- 1. Chief Patron -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+            <img src="images/tankeshwar.png" alt="Prof. (Dr.) Tankeshwar Kumar" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Tankeshwar Kumar" data-hi="प्रो. (डॉ.) टंकेश्वर कुमार">Prof. (Dr.) Tankeshwar Kumar</h4>
+          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Chief Patron" data-hi="मुख्य संरक्षक">Chief Patron</p>
+        </div>
+
+        <!-- 2. Patron -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+            <img src="images/pawan.png" alt="Prof. (Dr.) Pawan Kumar Sharma" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Pawan Kumar Sharma" data-hi="प्रो. (डॉ.) पवन कुमार शर्मा">Prof. (Dr.) Pawan Kumar Sharma</h4>
+          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Patron" data-hi="संरक्षक">Patron</p>
+        </div>
+
+        <!-- 3. Co-Patron -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+            <img src="images/suneel.png" alt="Prof. (Dr.) Suneel Kumar" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Suneel Kumar" data-hi="प्रो. (डॉ.) सुनील कुमार">Prof. (Dr.) Suneel Kumar</h4>
+          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Co-Patron" data-hi="सह-संरक्षक">Co-Patron</p>
+        </div>
+
+        <!-- 4. Chairperson (Dr. Vipin Kumar) -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+            <img src="images/vipin.png" alt="Dr. Vipin Kumar" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Dr. Vipin Kumar" data-hi="डॉ. विपिन कुमार">Dr. Vipin Kumar</h4>
+          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Chairperson" data-hi="अध्यक्ष">Chairperson</p>
+        </div>
+
+        <!-- 5. Convener -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+            <img src="images/rakesh.png" alt="Prof. (Dr.) Rakesh Kumar" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Rakesh Kumar" data-hi="प्रो. (डॉ.) राकेश कुमार">Prof. (Dr.) Rakesh Kumar</h4>
+          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Convener" data-hi="संयोजक">Convener</p>
+        </div>
+
+        <!-- 6. Co-Convener -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+            <img src="images/nitin.png" alt="Dr. Nitin Goyal" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Dr. Nitin Goyal" data-hi="डॉ. नितिन गोयल">Dr. Nitin Goyal</h4>
+          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Co-Convener" data-hi="सह-संयोजक">Co-Convener</p>
+        </div>
+
+      </div>
+       
+
+      </div>
+
     </div>
     <div class="hero-scroll-cue" aria-hidden="true"><span></span></div>
   </section>
+
+
+
 
   <!-- 01 About -->
   <section class="section" id="about">
@@ -200,74 +287,84 @@
   </section>
 
   <!-- 05 Resource Persons -->
-  <section class="section" id="speakers">
+ <section class="section" id="speakers">
     <div class="section-inner">
       <p class="section-eyebrow" data-en="05 — Resource Persons" data-hi="०५ — संसाधन व्यक्ति">०५ — संसाधन व्यक्ति</p>
       <h2 class="section-title" data-en="Tentative Speakers" data-hi="वक्ता एवं सत्र">वक्ता एवं सत्र</h2>
       <div class="speakers-grid" id="speakersGrid">
+      
         <article class="speaker-card">
           <div class="speaker-avatar">👨‍🏫</div>
           <div class="speaker-info">
-            <h3 class="speaker-name">Dr. Rakesh Kumar</h3>
-            <p class="speaker-affil">CUH Mahendergarh</p>
+            <h3 class="speaker-name" data-en="Prof. Sarbani Roy" data-hi="प्रो. सर्बनी रॉय">Prof. Sarbani Roy</h3>
+            <p class="speaker-affil" data-en="Jadavpur University" data-hi="जादवपुर विश्वविद्यालय">Jadavpur University</p>
           </div>
         </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name">Prof. Sarbani Roy</h3>
-            <p class="speaker-affil">Jadavpur University</p>
-          </div>
-        </article>
+
         <article class="speaker-card">
           <div class="speaker-avatar">👨‍💻</div>
           <div class="speaker-info">
-            <h3 class="speaker-name">Mr. Kapil Bhutani</h3>
-            <p class="speaker-affil">Telcocrats, Mohali</p>
+            <h3 class="speaker-name" data-en="Mr. Kapil Bhutani" data-hi="श्री कपिल भुटानी">Mr. Kapil Bhutani</h3>
+            <p class="speaker-affil" data-en="Telcocrats, Mohali" data-hi="टेलकोक्रेट्स, मोहाली">Telcocrats, Mohali</p>
           </div>
         </article>
+
         <article class="speaker-card">
           <div class="speaker-avatar">👨‍🏫</div>
           <div class="speaker-info">
-            <h3 class="speaker-name">Dr. Sunirmal Khatua</h3>
-            <p class="speaker-affil">University of Calcutta</p>
+            <h3 class="speaker-name" data-en="Dr. Sunirmal Khatua" data-hi="डॉ. सुनिर्मल खटुआ">Dr. Sunirmal Khatua</h3>
+            <p class="speaker-affil" data-en="University of Calcutta" data-hi="कलकत्ता विश्वविद्यालय">University of Calcutta</p>
           </div>
         </article>
+
         <article class="speaker-card">
           <div class="speaker-avatar">👩‍🏫</div>
           <div class="speaker-info">
-            <h3 class="speaker-name">Dr. Sujata Pal</h3>
-            <p class="speaker-affil">IIT Ropar</p>
+            <h3 class="speaker-name" data-en="Dr. Sujata Pal" data-hi="डॉ. सुजाता पाल">Dr. Sujata Pal</h3>
+            <p class="speaker-affil" data-en="IIT Ropar" data-hi="आईआईटी रोपड़">IIT Ropar</p>
           </div>
         </article>
+
         <article class="speaker-card">
           <div class="speaker-avatar">👨‍🏫</div>
           <div class="speaker-info">
-            <h3 class="speaker-name">Prof. Mayank Dave</h3>
-            <p class="speaker-affil">NIT Kurukshetra</p>
+            <h3 class="speaker-name" data-en="Dr. Rakesh Kumar" data-hi="डॉ. राकेश कुमार">Dr. Rakesh Kumar</h3>
+            <p class="speaker-affil" data-en="CUH Mahendergarh" data-hi="सीयूएच महेंद्रगढ़">CUH Mahendergarh</p>
           </div>
         </article>
+
         <article class="speaker-card">
           <div class="speaker-avatar">👨‍🏫</div>
           <div class="speaker-info">
-            <h3 class="speaker-name">Dr. Gaurav Kumar</h3>
-            <p class="speaker-affil">Magma Research and Consultancy</p>
+            <h3 class="speaker-name" data-en="Prof. Mayank Dave" data-hi="प्रो. मयंक दवे">Prof. Mayank Dave</h3>
+            <p class="speaker-affil" data-en="NIT Kurukshetra" data-hi="एनआईटी कुरुक्षेत्र">NIT Kurukshetra</p>
           </div>
         </article>
+
+        <article class="speaker-card">
+          <div class="speaker-avatar">👨‍🏫</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Dr. Gaurav Kumar" data-hi="डॉ. गौरव कुमार">Dr. Gaurav Kumar</h3>
+            <p class="speaker-affil" data-en="Magma Research and Consultancy" data-hi="मैग्मा रिसर्च एंड कंसल्टेंसी">Magma Research and Consultancy</p>
+          </div>
+        </article>
+
         <article class="speaker-card">
           <div class="speaker-avatar">👩‍🏫</div>
           <div class="speaker-info">
-            <h3 class="speaker-name">Er. Meenu Dhiman</h3>
-            <p class="speaker-affil">MSME DFO Karnal, GoI</p>
+            <h3 class="speaker-name" data-en="Er. Meenu Dhiman" data-hi="इंजीनियर मीनू धीमान">Er. Meenu Dhiman</h3>
+            <p class="speaker-affil" data-en="MSME DFO Karnal, GoI" data-hi="एमएसएमई डीएफओ करनाल, भारत सरकार">MSME DFO Karnal, GoI</p>
           </div>
         </article>
+
         <article class="speaker-card">
           <div class="speaker-avatar">👨‍💻</div>
           <div class="speaker-info">
-            <h3 class="speaker-name">Mr. Vipin Gupta</h3>
-            <p class="speaker-affil">U-Net Solutions</p>
+            <h3 class="speaker-name" data-en="Mr. Vipin Gupta" data-hi="श्री विपिन गुप्ता">Mr. Vipin Gupta</h3>
+            <p class="speaker-affil" data-en="U-Net Solutions" data-hi="यू-नेट सॉल्यूशंस">U-Net Solutions</p>
           </div>
         </article>
+
         <article class="speaker-card speaker-card-more">
           <div class="speaker-avatar">✨</div>
           <div class="speaker-info" style="display: flex; align-items: center; justify-content: center; height: 100%;">
@@ -298,18 +395,17 @@
   </section>
 
   <!-- 07 Registration Open Soon -->
-  <section class="section section-dark" id="register">
+<section class="section section-dark" id="register">
     <div class="section-inner register-inner">
-      <p class="section-eyebrow section-eyebrow-light" data-en="07 — Registration Open Soon" data-hi="०७ — पंजीकरण शीघ्र">०७ — पंजीकरण शीघ्र</p>
-      <h2 class="section-title-light" data-en="Registration Opens Soon" data-hi="पंजीकरण शीघ्र प्रारंभ होगा">पंजीकरण शीघ्र प्रारंभ होगा</h2>
-      <p class="register-copy" data-en="The registration form and fee details will be published here. Check back closer to the seminar dates, or contact the coordinators below to be notified directly." data-hi="पंजीकरण फॉर्म और शुल्क विवरण यहाँ प्रकाशित किए जाएंगे। कृपया संगोष्ठी की तिथियों के निकट पुनः देखें, या सीधे सूचित होने के लिए नीचे दिए गए समन्वयकों से संपर्क करें।">पंजीकरण फॉर्म और शुल्क विवरण यहाँ प्रकाशित किए जाएंगे। कृपया संगोष्ठी की तिथियों के निकट पुनः देखें, या सीधे सूचित होने के लिए नीचे दिए गए समन्वयकों से संपर्क करें।</p>
+      <p class="section-eyebrow section-eyebrow-light" data-en="07 — Registration" data-hi="०७ — पंजीकरण">०७ — पंजीकरण</p>
+      <h2 class="section-title-light" data-en="Register for the Seminar" data-hi="संगोष्ठी के लिए पंजीकरण करें">संगोष्ठी के लिए पंजीकरण करें</h2>
+      <p class="register-copy" data-en="Click the link below to access the official AICTE ATAL Academy portal to complete your registration. You can also download the NOC form for your official procedures." data-hi="अपना पंजीकरण पूरा करने के लिए आधिकारिक AICTE ATAL अकादमी पोर्टल पर जाने के लिए नीचे दिए गए लिंक पर क्लिक करें। आप अपनी आधिकारिक प्रक्रियाओं के लिए NOC फॉर्म भी डाउनलोड कर सकते हैं।">अपना पंजीकरण पूरा करने के लिए आधिकारिक AICTE ATAL अकादमी पोर्टल पर जाने के लिए नीचे दिए गए लिंक पर क्लिक करें। आप अपनी आधिकारिक प्रक्रियाओं के लिए NOC फॉर्म भी डाउनलोड कर सकते हैं।</p>
       <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <span class="coming-soon-badge" data-en="Coming Soon" data-hi="जल्द आ रहा है">जल्द आ रहा है</span>
+        <a href="https://atalacademy.aicte.gov.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-en="Register on ATAL Portal" data-hi="ATAL पोर्टल पर पंजीकरण करें" style="background: var(--accent); color: #fff;">ATAL पोर्टल पर पंजीकरण करें</a>
         <a href="sample-noc.pdf" id="sectionDownloadBtn" class="btn btn-primary" download="AICTE_NOC.pdf" data-en="Download NOC Form" data-hi="NOC फॉर्म डाउनलोड करें" style="background: var(--accent); color: #fff;">NOC फॉर्म डाउनलोड करें</a>
       </div>
     </div>
   </section>
-
   <!-- 08 Co-ordinators -->
   <section class="section" id="contact">
     <div class="section-inner">
@@ -333,75 +429,147 @@
   </section>
 
   <!-- 09 Committee -->
-  <section class="section section-alt" id="committee">
-    <div class="section-inner">
-      <p class="section-eyebrow" data-en="09 — Committee" data-hi="०९ — समिति">०९ — समिति</p>
-      <h2 class="section-title" data-en="Committee Members" data-hi="समिति के सदस्य एवं स्वयंसेवक">समिति के सदस्य एवं स्वयंसेवक</h2>
-      
-      <div style="margin-bottom: 2.5rem;">
-        <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Faculty Members" data-hi="संकाय सदस्य">संकाय सदस्य</h3>
-        <div class="speakers-grid">
-          <article class="speaker-card">
-            <div class="speaker-avatar">👨‍🏫</div>
-            <div class="speaker-info">
-              <h3 class="speaker-name">Dr. Vipin Kumar</h3>
-              <p class="speaker-affil">HoD</p>
-              <p class="speaker-affil">Associate Professor</p>
-            </div>
-          </article>
-          <article class="speaker-card">
-            <div class="speaker-avatar">👨‍🏫</div>
-            <div class="speaker-info">
-              <h3 class="speaker-name">Dr. Vishal Passricha</h3>
-              <p class="speaker-affil">Assistant Professor</p>
-            </div>
-          </article>
-          <article class="speaker-card">
-            <div class="speaker-avatar">👨‍🏫</div>
-            <div class="speaker-info">
-              <h3 class="speaker-name">Dr. Sushil Kumar</h3>
-              <p class="speaker-affil">Assistant Professor</p>
-            </div>
-          </article>
-          <article class="speaker-card">
-            <div class="speaker-avatar">👩‍🏫</div>
-            <div class="speaker-info">
-              <h3 class="speaker-name">Dr. Sangeeta</h3>
-              <p class="speaker-affil">Assistant Professor </p>
-            </div>
-          </article>
-          <article class="speaker-card">
-            <div class="speaker-avatar">👨‍🏫</div>
-            <div class="speaker-info">
-              <h3 class="speaker-name">Dr. Anant Rajee Bara</h3>
-              <p class="speaker-affil">Assistant Professor</p>
-            </div>
-          </article>
-        </div>
+<section class="section section-alt" id="committee">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-en="09 — Committee" data-hi="०९ — समिति">०९ — समिति</p>
+    <h2 class="section-title" data-en="Committee Members" data-hi="समिति के सदस्य एवं स्वयंसेवक">समिति के सदस्य एवं स्वयंसेवक</h2>
+    
+    <!-- Core Leadership / Patrons Section -->
+    <div style="margin-bottom: 2.5rem;">
+      <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Leadership & Patrons" data-hi="मुख्य संरक्षक एवं अधिकारी">मुख्य संरक्षक एवं अधिकारी</h3>
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <div class="speaker-avatar">🏛️</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Prof. (Dr.) Tankeshwar Kumar" data-hi="प्रो. (डॉ.) टंकेश्वर कुमार">Prof. (Dr.) Tankeshwar Kumar</h3>
+            <p class="speaker-affil" data-en="Chief Patron" data-hi="मुख्य संरक्षक">Chief Patron</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">🏛️</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Prof. (Dr.) Pawan Kumar Sharma" data-hi="प्रो. (डॉ.) पवन कुमार शर्मा">Prof. (Dr.) Pawan Kumar Sharma</h3>
+            <p class="speaker-affil" data-en="Patron" data-hi="संरक्षक">Patron</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">🏛️</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Prof. (Dr.) Suneel Kumar" data-hi="प्रो. (डॉ.) सुनील कुमार">Prof. (Dr.) Suneel Kumar</h3>
+            <p class="speaker-affil" data-en="Co-Patron" data-hi="सह-संरक्षक">Co-Patron</p>
+          </div>
+        </article>
+    <article class="speaker-card">
+          <div class="speaker-avatar">📋</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Prof. (Dr.) Rakesh Kumar" data-hi="प्रो. (डॉ.) राकेश कुमार">Prof. (Dr.) Rakesh Kumar</h3>
+            <p class="speaker-affil" data-en="Convener" data-hi="संयोजक">Convener</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">📋</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Dr. Nitin Goyal" data-hi="डॉ. नितिन गोयल">Dr. Nitin Goyal</h3>
+            <p class="speaker-affil" data-en="Co-Convener" data-hi="सह-संयोजक">Co-Convener</p>
+          </div>
+        </article>
       </div>
-
-      <div>
-        <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Student Volunteers" data-hi="छात्र स्वयंसेवक">छात्र स्वयंसेवक</h3>
-        <div class="speakers-grid">
-          <article class="speaker-card">
-            <div class="speaker-avatar">🧑‍🎓</div>
-            <div class="speaker-info">
-              <h3 class="speaker-name">Harsh Sharma</h3>
-              <p class="speaker-affil" data-en="Student Volunteer" data-hi="छात्र स्वयंसेवक">छात्र स्वयंसेवक</p>
-            </div>
-          </article>
-          <article class="speaker-card">
-            <div class="speaker-avatar">🧑‍🎓</div>
-            <div class="speaker-info">
-              <h3 class="speaker-name">Abhishek Kumar</h3>
-              <p class="speaker-affil" data-en="Student Volunteer" data-hi="छात्र स्वयंसेवक">छात्र स्वयंसेवक</p>
-            </div>
-          </article>
-        </div>
-      </div>
-
     </div>
-  </section>
+
+    <!-- Faculty Members Section -->
+    <div style="margin-bottom: 2.5rem;">
+      <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Faculty Members" data-hi="संकाय सदस्य">संकाय सदस्य</h3>
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <div class="speaker-avatar">👨‍🏫</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Dr. Vipin Kumar" data-hi="डॉ. विपिन कुमार">Dr. Vipin Kumar</h3>
+            <p class="speaker-affil" data-en="HoD" data-hi="विभागाध्यक्ष">HoD</p>
+            <p class="speaker-affil" data-en="Associate Professor" data-hi="सह प्राध्यापक">Associate Professor</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">👨‍🏫</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Dr. Vishal Passricha" data-hi="डॉ. विशाल पसरीचा">Dr. Vishal Passricha</h3>
+            <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">👨‍🏫</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Dr. Sushil Kumar" data-hi="डॉ. सुशील कुमार">Dr. Sushil Kumar</h3>
+            <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">👨‍🏫</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Mr. Anant Rajee Bara" data-hi="श्री अनंत राजी बारा">Mr. Anant Rajee Bara</h3>
+            <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">👩‍🏫</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Dr. Sangeeta" data-hi="डॉ. संगीता">Dr. Sangeeta</h3>
+            <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Technical Support Section -->
+    <div style="margin-bottom: 2.5rem;">
+      <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Technical Support" data-hi="तकनीकी सहायता">तकनीकी सहायता</h3>
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <div class="speaker-avatar">💻</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Amit Sheron" data-hi="अमित शेरोन">Amit Sheron</h3>
+            <p class="speaker-affil" data-en="System Analyst" data-hi="सिस्टम विश्लेषक">System Analyst</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">💻</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Rahul Sharma" data-hi="राहुल शर्मा">Rahul Sharma</h3>
+            <p class="speaker-affil" data-en="Senior Technical Assistant" data-hi="वरिष्ठ तकनीकी सहायक">Senior Technical Assistant</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">💻</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Arun" data-hi="अरुण">Arun</h3>
+            <p class="speaker-affil" data-en="Laboratory Assistant" data-hi="प्रयोगशाला सहायक">Laboratory Assistant</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Student Volunteers Section -->
+    <div>
+      <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Student Volunteers" data-hi="छात्र स्वयंसेवक">छात्र स्वयंसेवक</h3>
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <div class="speaker-avatar">🧑‍🎓</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Harsh Sharma" data-hi="हर्ष शर्मा">Harsh Sharma</h3>
+            <p class="speaker-affil" data-en="Student Volunteer" data-hi="छात्र स्वयंसेवक">छात्र स्वयंसेवक</p>
+          </div>
+        </article>
+        <article class="speaker-card">
+          <div class="speaker-avatar">🧑‍🎓</div>
+          <div class="speaker-info">
+            <h3 class="speaker-name" data-en="Abhishek Kumar" data-hi="अभिषेक कुमार">Abhishek Kumar</h3>
+            <p class="speaker-affil" data-en="Student Volunteer" data-hi="छात्र स्वयंसेवक">छात्र स्वयंसेवक</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 </main>
 
