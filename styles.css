@@ -202,7 +202,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 2rem 5rem 2rem;
+  padding: 4rem 2rem 5rem 2rem;
   text-align: center;
 }
 
@@ -239,17 +239,17 @@ body {
 .hero-title {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 650;
   line-height: 1.15;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.6rem;
   letter-spacing: -0.02em;
 }
 
 .hero-sub {
   color: var(--text-muted);
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  max-width: 750px;
-  margin: 0 auto 2.5rem auto;
+  max-width: 800px;
+  margin: 0 auto 1.2rem auto;
 }
 
 .hero-meta {
