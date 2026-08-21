@@ -37,6 +37,12 @@
       border-radius: 4px;
       display: block;
     }
+
+    @media (max-width: 480px) {
+      .hero-logos-div img {
+        height: 60px !important;
+      }
+    }
   </style>
 </head>
 
@@ -86,34 +92,33 @@
   <main id="top">
     <section class="hero">
       <div class="hero-inner">
-        <!-- Top Row with Logos on the sides and badges in the center -->
-        <div class="eyebrow-row"
-          style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        
+        <!-- Main Hero Header Container (Two-Div Layout) -->
+        <div class="hero-header-container">
 
-          <!-- Left Logo (AICTE) -->
-          <div class="hero-logo-left">
-            <img src="aicte-logo.png" alt="AICTE Logo" style="height: 80px; width: auto; object-fit: contain;">
+          <!-- DIV 1: Logos Row (Far Left & Far Right) -->
+          <div class="hero-logos-div">
+            <div class="hero-logo-left">
+              <img src="aicte-logo.png" alt="AICTE Logo" style="height: 80px; width: auto; object-fit: contain;">
+            </div>
+            <div class="hero-logo-right">
+              <img src="cuh-logo.png" alt="CUH Logo" style="height: 85px; width: auto; object-fit: contain;">
+            </div>
           </div>
 
-          <!-- Center Badges -->
-          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <!-- DIV 2: Badges Row (Centered) -->
+          <div class="hero-badges-div">
             <div class="aicte-sponsor-wrap">
               <span data-en="AICTE Sponsored" data-hi="अ.भा.त.शि.प. प्रायोजित">प्रायोजित</span>
             </div>
-            <span class="pill pill-outline" data-en="Two-Day National Seminar" data-hi="दो दिवसीय राष्ट्रीय संगोष्ठी">दो
-              दिवसीय राष्ट्रीय संगोष्ठी</span>
-          </div>
-
-          <!-- Right Logo (Central University of Haryana) -->
-          <div class="hero-logo-right">
-            <img src="cuh-logo.png" alt="CUH Logo" style="height: 85px; width: auto; object-fit: contain;">
+            <span class="pill pill-outline" data-en="Two-Day National Seminar" data-hi="दो दिवसीय राष्ट्रीय संगोष्ठी">दो दिवसीय राष्ट्रीय संगोष्ठी</span>
           </div>
 
         </div>
 
         <h1 class="hero-title">
           <span data-en="Towards Next&nbsp;Gen Communication with Artificial Intelligence &amp; IoT"
-            data-hi="कृत्रिम बुद्धिमत्ता और IoT के साथ अगली पीढ़ी के संचार की ओर">कृत्रिम बुद्धिमत्ता और IoT के साथ अगली
+            data-hi="कृत्रिम बुद्धिमत्ता और आईओटी के साथ अगली पीढ़ी के संचार की ओर">कृत्रिम बुद्धिमत्ता और आईओटी के साथ अगली
             पीढ़ी के संचार की ओर</span>
         </h1>
 
