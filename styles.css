@@ -130,8 +130,8 @@ body {
   font-size: 1.1rem;
 }
 .brand-logo {
-  height: 40px; /* Adjust this value (e.g., 30px, 40px, 50px) to make it smaller or bigger */
-  width: auto;  /* Keeps the correct aspect ratio so it doesn't stretch */
+  height: 40px; 
+  width: auto;  
 }
 
 .main-nav {
@@ -207,8 +207,9 @@ body {
 }
 
 .hero-inner {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .eyebrow-row {
@@ -765,8 +766,33 @@ body {
   font-size: 0.85rem;
 }
 
-@media (max-width: 900px) {
+/* ==========================================
+   RESPONSIVE LEADERSHIP GRID FIX
+   ========================================== */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  text-align: center;
+}
 
+/* Tablet Screens (Break to multiple rows gracefully) */
+@media (max-width: 1100px) {
+  .leadership-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 650px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
   .main-nav {
     display: none;
     position: absolute;
