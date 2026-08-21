@@ -1,594 +1,763 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="hi" data-lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Next Gen Communication with AI &amp; IoT — National Seminar, CUH</title>
-<meta name="description" content="AICTE Sponsored Two-Day National Seminar on Towards Next Gen Communication with Artificial Intelligence and IoT, 15–16 Oct 2026, Central University of Haryana.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
- 
-  .aicte-sponsor-wrap {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(59, 130, 246, 0.15);
-    color: #60a5fa;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 600;
-  }
 
-  .aicte-logo-img {
-    height: 38px;
-    width: auto;
-    min-width: 100px;
-    object-fit: contain;
-    background: #fff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    display: block;
-  }
-</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Gen Communication with AI &amp; IoT — National Seminar, CUH</title>
+  <meta name="description"
+    content="AICTE Sponsored Two-Day National Seminar on Towards Next Gen Communication with Artificial Intelligence and IoT, 15–16 Oct 2026, Central University of Haryana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .aicte-sponsor-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .aicte-logo-img {
+      height: 38px;
+      width: auto;
+      min-width: 100px;
+      object-fit: contain;
+      background: #fff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
 
-<canvas id="netCanvas"></canvas>
+  <canvas id="netCanvas"></canvas>
 
-<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
-
-<div style="background-color: #eab308; color: #1e293b; padding: 10px 0; font-weight: 600;">
-  <marquee behavior="scroll" direction="left" scrollamount="5">
-    📢 Important Notice: Participants can download their NOC below
-  </marquee>
-</div>
-
-
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a href="#top" class="brand">
-      <img src="https://www.cuh.ac.in/logo.png" alt="Central University of Haryana" class="brand-logo">
-    </a>
-
-    <nav class="main-nav" id="mainNav">
-      <a href="#about" data-en="About" data-hi="परिचय">परिचय</a>
-      <a href="#vaani" data-en="VAANI Scheme" data-hi="वाणी योजना">वाणी योजना</a>
-      <a href="#objectives" data-en="Objectives" data-hi="उद्देश्य">उद्देश्य</a>
-      <a href="#topics" data-en="Coverage" data-hi="विषय">विषय</a>
-      <a href="#speakers" data-en="Speakers" data-hi="वक्ता">वक्ता</a>
-      <a href="#participants" data-en="Participants" data-hi="प्रतिभागी">प्रतिभागी</a>
-      <a href="#register" data-en="Registration" data-hi="पंजीकरण">पंजीकरण</a>
-      <a href="#contact" data-en="Coordinators" data-hi="समन्वयक">समन्वयक</a>
-      <a href="#committee" data-en="Committee" data-hi="समिति">समिति</a>
-    </nav>
-
-    <div class="header-actions">
-      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
-        <span class="lang-opt" data-val="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-val="hi">हिं</span>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
+  <div class="progress-rail">
+    <div class="progress-fill" id="progressFill"></div>
   </div>
-</header>
 
-<main id="top">
-<section class="hero">
-    <div class="hero-inner">
-      <!-- Top Row with Logos on the sides and badges in the center -->
-      <div class="eyebrow-row" style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 1.5rem;">
-        
-        <!-- Left Logo (AICTE) -->
-        <div class="hero-logo-left">
-          <img src="aicte-logo.png" alt="AICTE Logo" style="height: 80px; width: auto; object-fit: contain;">
-        </div>
-
-        <!-- Center Badges -->
-        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-          <div class="aicte-sponsor-wrap">
-            <span data-en="AICTE Sponsored" data-hi="अ.भा.त.शि.प. प्रायोजित">प्रायोजित</span>
-          </div>
-          <span class="pill pill-outline" data-en="Two-Day National Seminar" data-hi="दो दिवसीय राष्ट्रीय संगोष्ठी">दो दिवसीय राष्ट्रीय संगोष्ठी</span>
-        </div>
-
-        <!-- Right Logo (Central University of Haryana) -->
-        <div class="hero-logo-right">
-          <img src="cuh-logo.png" alt="CUH Logo" style="height: 85px; width: auto; object-fit: contain;">
-        </div>
-
-      </div>
-
-      <h1 class="hero-title">
-        <span data-en="Towards Next&nbsp;Gen Communication with Artificial Intelligence &amp; IoT" data-hi="कृत्रिम बुद्धिमत्ता और IoT के साथ अगली पीढ़ी के संचार की ओर">कृत्रिम बुद्धिमत्ता और IoT के साथ अगली पीढ़ी के संचार की ओर</span>
-      </h1>
-
-      <p class="hero-sub" data-en="Two days of keynotes, hands-on demos and open-source tooling on 5G, IoT and Machine Learning — hosted by the Department of Computer Science &amp; Engineering, Central University of Haryana." data-hi="5G, IoT और मशीन लर्निंग पर मुख्य वक्तव्य, व्यावहारिक प्रदर्शन और ओपन-सोर्स टूल्स के दो दिन — कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, केंद्रीय विश्वविद्यालय हरियाणा द्वारा आयोजित।">
-        5G, IoT और मशीन लर्निंग पर मुख्य वक्तव्य, व्यावहारिक प्रदर्शन और ओपन-सोर्स टूल्स के दो दिन — कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, केंद्रीय विश्वविद्यालय हरियाणा द्वारा आयोजित।
-      </p>
-
-      <div class="hero-meta">
-        <div class="meta-item">
-          <span class="meta-label" data-en="Dates" data-hi="तिथियाँ">तिथियाँ</span>
-          <span class="meta-value">15–16 Oct 2026</span>
-        </div>
-        <div class="meta-divider"></div>
-        <div class="meta-item">
-          <span class="meta-label" data-en="Venue" data-hi="स्थान">स्थान</span>
-          <span class="meta-value" data-en="Central University of Haryana, Mahendergarh" data-hi="केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़">केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़</span>
-        </div>
-      </div>
-
-      <div class="hero-actions">
-        <a href="https://atalacademy.aicte.gov.in/" class="btn btn-primary" data-en="Register Interest" data-hi="पंजीकरण करें">पंजीकरण करें</a>
-        <a href="sample-noc.pdf" id="heroDownloadBtn" class="btn btn-ghost" download="AICTE_NOC.pdf" data-en="Download NOC" data-hi="NOC डाउनलोड करें" style="border-color: var(--accent); color: var(--accent);">NOC डाउनलोड करें</a>
-        <a href="#about" class="btn btn-ghost" data-en="Learn More" data-hi="और जानें">और जानें</a>
-      </div>
-
-      <!-- Free Registration Note Box -->
-      <div style="margin: -0.25rem 0 1.5rem 0; display: inline-block; padding: 0.6rem 1rem; background: rgba(var(--accent-rgb, 0, 123, 255), 0.08); border: 1px solid rgba(var(--accent-rgb, 0, 123, 255), 0.2); border-radius: 8px;">
-        <span style="font-size: 0.95rem; font-weight: 500;" data-en="✨ Free Registration — No Registration Fee Required" data-hi="✨ निःशुल्क पंजीकरण — कोई पंजीकरण शुल्क आवश्यक नहीं है">✨ निःशुल्क पंजीकरण — कोई पंजीकरण शुल्क आवश्यक नहीं है</span>
-      </div>
-
-      <div class="countdown" id="countdown" aria-live="polite" style="margin-bottom: 2.5rem;">
-        <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label" data-en="Days" data-hi="दिन">दिन</span></div>
-        <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label" id="cdHours-label" data-en="Hours" data-hi="घंटे">घंटे</span></div>
-        <div class="cd-box"><span class="cd-num" id="cdMins">00</span><span class="cd-label" id="cdMins-label" data-en="Mins" data-hi="मिनट">मिनट</span></div>
-        <div class="cd-box"><span class="cd-num" id="cdSecs">00</span><span class="cd-label" id="cdSecs-label" data-en="Secs" data-hi="सेकंड">सेकंड</span></div>
-      </div>
-
-    
-        
-     <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.75rem; width: 100%; text-align: center;">
-        
-        <!-- 1. Chief Patron -->
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
-            <img src="images/tankeshwar.png" alt="Prof. (Dr.) Tankeshwar Kumar" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Tankeshwar Kumar" data-hi="प्रो. (डॉ.) टंकेश्वर कुमार">Prof. (Dr.) Tankeshwar Kumar</h4>
-          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Chief Patron" data-hi="मुख्य संरक्षक">Chief Patron</p>
-          <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="Vice-Chancellor" data-hi="कुलपति">Vice-Chancellor</p>
-        </div>
-
-        <!-- 2. Patron -->
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
-            <img src="images/pawan.png" alt="Prof. (Dr.) Pawan Kumar Sharma" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Pawan Kumar Sharma" data-hi="प्रो. (डॉ.) पवन कुमार शर्मा">Prof. (Dr.) Pawan Kumar Sharma</h4>
-          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Patron" data-hi="संरक्षक">Patron</p>
-          <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="Pro-Vice-Chancellor" data-hi="प्रतिकुलपति">Pro-Vice-Chancellor</p>
-        </div>
-
-        <!-- 3. Co-Patron -->
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
-            <img src="images/suneel.png" alt="Prof. (Dr.) Suneel Kumar" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Suneel Kumar" data-hi="प्रो. (डॉ.) सुनील कुमार">Prof. (Dr.) Suneel Kumar</h4>
-          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Co-Patron" data-hi="सह-संरक्षक">Co-Patron</p>
-          <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="Registrar" data-hi="कुलसचिव">Registrar</p>
-        </div>
-
-        <!-- 4. Chairperson (Dr. Vipin Kumar) -->
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
-            <img src="images/vipin.png" alt="Dr. Vipin Kumar" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Dr. Vipin Kumar" data-hi="डॉ. विपिन कुमार">Dr. Vipin Kumar</h4>
-          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Chairperson" data-hi="अध्यक्ष">Chairperson</p>
-          <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="HoD, CSE" data-hi="विभागाध्यक्ष, कंप्यूटर साइंस">HoD, CSE</p>
-        </div>
-
-        <!-- 5. Convener -->
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
-            <img src="images/rakesh.png" alt="Prof. (Dr.) Rakesh Kumar" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Rakesh Kumar" data-hi="प्रो. (डॉ.) राकेश कुमार">Prof. (Dr.) Rakesh Kumar</h4>
-          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Convener" data-hi="संयोजक">Convener</p>
-        </div>
-
-        <!-- 6. Co-Convener -->
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
-            <img src="images/nitin.png" alt="Dr. Nitin Goyal" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Dr. Nitin Goyal" data-hi="डॉ. नितिन गोयल">Dr. Nitin Goyal</h4>
-          <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Co-Convener" data-hi="सह-संयोजक">Co-Convener</p>
-        </div>
-
-</div>
-      </div>
-
-    </div>
-    <div class="hero-scroll-cue" aria-hidden="true"><span></span></div>
-  </section>
-
-
-
-
-  <!-- 01 About -->
-  <section class="section" id="about">
-    <div class="section-inner">
-      <p class="section-eyebrow" data-en="01 — About" data-hi="०१ — परिचय">०१ — परिचय</p>
-      <div class="about-grid">
-        <article class="about-card">
-          <h2 data-en="About the University" data-hi="विश्वविद्यालय के बारे में">विश्वविद्यालय के बारे में</h2>
-          <p data-en="Central University of Haryana is a Central University established under the Central Universities Act, 2009 of the Parliament. It is one of the 15 Central Universities established by MHRD, GoI under the XIth Five Year Plan (2007-12). The University is fully funded by the UGC. The university is awarded A grade by NAAC. Central University of Haryana is one of the renowned central universities in India offering various undergraduate programs in Engineering &amp; postgraduate programs under multiple streams including Arts, Science, Commerce, Management, Computer Applications, Library Science, etc. Apart from these, it also offers research courses in several specializations under Arts, Science and engineering." data-hi="केंद्रीय विश्वविद्यालय हरियाणा संसद के केंद्रीय विश्वविद्यालय अधिनियम, 2009 के तहत स्थापित एक केंद्रीय विश्वविद्यालय है। यह MHRD, GoI द्वारा ग्यारहवीं पंचवर्षीय योजना (2007-12) के तहत स्थापित 15 केंद्रीय विश्वविद्यालयों में से एक है। विश्वविद्यालय पूरी तरह से UGC द्वारा वित्त पोषित है और NAAC द्वारा A ग्रेड से सम्मानित है। CUH इंजीनियरिंग में स्नातक कार्यक्रम और कला, विज्ञान, वाणिज्य, प्रबंधन, कंप्यूटर अनुप्रयोग व पुस्तकालय विज्ञान सहित कई धाराओं में स्नातकोत्तर कार्यक्रम प्रदान करता है, साथ ही कला, विज्ञान और इंजीनियरिंग में शोध पाठ्यक्रम भी प्रदान करता है।">
-            केंद्रीय विश्वविद्यालय हरियाणा संसद के केंद्रीय विश्वविद्यालय अधिनियम, 2009 के तहत स्थापित एक केंद्रीय विश्वविद्यालय है। यह MHRD, GoI द्वारा ग्यारहवीं पंचवर्षीय योजना (2007-12) के तहत स्थापित 15 केंद्रीय विश्वविद्यालयों में से एक है। विश्वविद्यालय पूरी तरह से UGC द्वारा वित्त पोषित है और NAAC द्वारा A ग्रेड से सम्मानित है। CUH इंजीनियरिंग में स्नातक कार्यक्रम और कला, विज्ञान, वाणिज्य, प्रबंधन, कंप्यूटर अनुप्रयोग व पुस्तकालय विज्ञान सहित कई धाराओं में स्नातकोत्तर कार्यक्रम प्रदान करता है, साथ ही कला, विज्ञान और इंजीनियरिंग में शोध पाठ्यक्रम भी प्रदान करता है।
-          </p>
-        </article>
-        <article class="about-card">
-          <h2 data-en="About the Department" data-hi="विभाग के बारे में">विभाग के बारे में</h2>
-          <p data-en="The Department of Computer Science and Engineering started in the year 2016 under the umbrella of the School of Engineering &amp; Technology with the aim to impart high quality and practical education to the students in the field of Computer Science and Engineering. The department is currently offering a B. Tech., M.Tech. and PhD programme in CSE. The department has a highly qualified faculty members who are working on the thrust areas like WSN, Cloud Computing, Network Security, Computer Vision and Multimedia, IoT and Health Informatics, Machine Learning and Data Mining etc." data-hi="कंप्यूटर विज्ञान और इंजीनियरिंग विभाग की शुरुआत वर्ष 2016 में स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी के अंतर्गत हुई थी, जिसका उद्देश्य CSE में उच्च गुणवत्ता और व्यावहारिक शिक्षा प्रदान करना है। विभाग वर्तमान में B. Tech., M.Tech. और PhD कार्यक्रम प्रदान करता है, जिसके संकाय सदस्य WSN, क्लाउड कंप्यूटिंग, नेटवर्क सुरक्षा, कंप्यूटर विजन और मल्टीमीडिया, IoT और स्वास्थ्य सूचना विज्ञान, तथा मशीन लर्निंग और डेटा माइनिंग जैसे क्षेत्रों पर कार्यरत हैं।">
-            कंप्यूटर विज्ञान और इंजीनियरिंग विभाग की शुरुआत वर्ष 2016 में स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी के अंतर्गत हुई थी, जिसका उद्देश्य CSE में उच्च गुणवत्ता और व्यावहारिक शिक्षा प्रदान करना है। विभाग वर्तमान में B. Tech., M.Tech. और PhD कार्यक्रम प्रदान करता है, जिसके संकाय सदस्य WSN, क्लाउड कंप्यूटिंग, नेटवर्क सुरक्षा, कंप्यूटर विजन और मल्टीमीडिया, IoT और स्वास्थ्य सूचना विज्ञान, तथा मशीन लर्निंग और डेटा माइनिंग जैसे क्षेत्रों पर कार्यरत हैं।
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 AICTE VAANI Scheme -->
-  <section class="section section-alt" id="vaani">
-    <div class="section-inner">
-      <p class="section-eyebrow" data-en="02 — AICTE VAANI Scheme" data-hi="०२ — एआईसीटीई वाणी योजना">०२ — एआईसीटीई वाणी योजना</p>
-      <div class="about-grid" style="grid-template-columns: 1fr;">
-        <article class="about-card">
-          <h2 data-en="AICTE VAANI Scheme" data-hi="एआईसीटीई वाणी योजना">एआईसीटीई वाणी योजना</h2>
-          <p data-en="Vibrant Advocacy for Advancement and Nurturing of Indian Languages (VAANI) is a premier initiative by the All India Council for Technical Education (AICTE) to promote technical education and content dissemination across regional Indian languages. In alignment with the national vision of *Viksit Bharat 2047*, this scheme provides financial assistance to eligible institutions to organize conferences, seminars, and workshops in 22 scheduled Indian languages. By bridging language gaps in higher education, the VAANI scheme empowers researchers, faculty, and working professionals to explore cutting-edge engineering domains—such as Artificial Intelligence, IoT, and Next-Gen Communications—in their native languages." data-hi="वाइब्रेंट एडवोकेसी फॉर एडवांस्मेंट एंड नर्चरिंग ऑफ इंडियन लैंग्वेजेज (VAANI) अखिल भारतीय तकनीकी शिक्षा परिषद (AICTE) की एक प्रमुख पहल है, जिसका उद्देश्य क्षेत्रीय भारतीय भाषाओं में तकनीकी शिक्षा और सामग्री के प्रसार को बढ़ावा देना है। विकसित भारत 2047 के राष्ट्रीय विजन के अनुरूप, यह योजना 22 अनुसूचित भारतीय भाषाओं में सम्मेलनों, सेमिनारों और कार्यशालाओं के आयोजन के लिए पात्र संस्थानों को वित्तीय सहायता प्रदान करती है। उच्च शिक्षा में भाषा की बाधा को पाटने के माध्यम से, यह योजना शोधकर्ताओं, संकाय सदस्यों और पेशेवरों को अपनी मातृभाषा में कृत्रिम बुद्धिमत्ता, IoT और अगली पीढ़ी के संचार जैसे अत्याधुनिक तकनीकी क्षेत्रों का पता लगाने के लिए सशक्त बनाती है।">
-            वाइब्रेंट एडवोकेसी फॉर एडवांस्मेंट एंड नर्चरिंग ऑफ इंडियन लैंग्वेजेज (VAANI) अखिल भारतीय तकनीकी शिक्षा परिषद (AICTE) की एक प्रमुख पहल है, जिसका उद्देश्य क्षेत्रीय भारतीय भाषाओं में तकनीकी शिक्षा और सामग्री के प्रसार को बढ़ावा देना है। विकसित भारत 2047 के राष्ट्रीय विजन के अनुरूप, यह योजना 22 अनुसूचित भारतीय भाषाओं में सम्मेलनों, सेमिनारों और कार्यशालाओं के आयोजन के लिए पात्र संस्थानों को वित्तीय सहायता प्रदान करती है। उच्च शिक्षा में भाषा की बाधा को पाटने के माध्यम से, यह योजना शोधकर्ताओं, संकाय सदस्यों और पेशेवरों को अपनी मातृभाषा में कृत्रिम बुद्धिमत्ता, IoT और अगली पीढ़ी के संचार जैसे अत्याधुनिक तकनीकी क्षेत्रों का पता लगाने के लिए सशक्त बनाती है।
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 03 Objective and Outcome -->
-  <section class="section" id="objectives">
-    <div class="section-inner">
-      <p class="section-eyebrow" data-en="03 — Objective and Outcome" data-hi="०३ — उद्देश्य और परिणाम">०३ — उद्देश्य और परिणाम</p>
-      <div class="objectives-outcomes-vertical">
-        <div class="oo-block">
-          <h3 class="large-heading" data-en="Objectives" data-hi="उद्देश्य">उद्देश्य</h3>
-          <ul class="check-list">
-            <li data-en="To train the researchers, academicians with the basic technologies of 5G, Internet of Things and Machine Learning." data-hi="शोधकर्ताओं और शिक्षाविदों को 5G, IoT और मशीन लर्निंग की बुनियादी तकनीकों में प्रशिक्षित करना।">शोधकर्ताओं और शिक्षाविदों को 5G, IoT और मशीन लर्निंग की बुनियादी तकनीकों में प्रशिक्षित करना।</li>
-            <li data-en="To deliver the practical sessions on IoT, Raspberry Pi, Arduino with the integration of Data Analytics, Machine Learning Approaches with the Problem Statement and Solutions oriented approach." data-hi="डेटा एनालिटिक्स और ML दृष्टिकोणों के साथ IoT, Raspberry Pi और Arduino पर व्यावहारिक सत्र प्रदान करना।">डेटा एनालिटिक्स और ML दृष्टिकोणों के साथ IoT, Raspberry Pi और Arduino पर व्यावहारिक सत्र प्रदान करना।</li>
-            <li data-en="To present the cavernous understanding of the IoT algorithms for the researchers and practitioners." data-hi="शोधकर्ताओं और व्यवसायियों के लिए IoT एल्गोरिदम की गहन समझ प्रस्तुत करना।">शोधकर्ताओं और व्यवसायियों के लिए IoT एल्गोरिदम की गहन समझ प्रस्तुत करना।</li>
-            <li data-en="To integrate the advance networks in research and development activities in the higher education with master’s /doctorate levels." data-hi="मास्टर्स/डॉक्टरेट स्तर पर शोध व विकास गतिविधियों में उन्नत नेटवर्क को एकीकृत करना।">मास्टर्स/डॉक्टरेट स्तर पर शोध व विकास गतिविधियों में उन्नत नेटवर्क को एकीकृत करना।</li>
-          </ul>
-        </div>
-        <div class="oo-block">
-          <h3 class="large-heading" data-en="Expected Outcome" data-hi="अपेक्षित परिणाम">अपेक्षित परिणाम</h3>
-          <p class="oo-lead" data-en="The Seminar focuses on addressing key critical aspects with the implementations:" data-hi="संगोष्ठी कार्यान्वयन के साथ प्रमुख पहलुओं को संबोधित करने पर केंद्रित है:">संगोष्ठी कार्यान्वयन के साथ प्रमुख पहलुओं को संबोधित करने पर केंद्रित है:</p>
-          <ul class="tag-list">
-            <li data-en="5G Technology" data-hi="5G प्रौद्योगिकी">5G प्रौद्योगिकी</li>
-            <li data-en="Internet of Things" data-hi="इंटरनेट ऑफ थिंग्स">इंटरनेट ऑफ थिंग्स</li>
-            <li data-en="Machine Learning" data-hi="मशीन लर्निंग">मशीन लर्निंग</li>
-            <li data-en="Networks Data Analytics using Data Science" data-hi="नेटवर्क डेटा एनालिटिक्स">नेटवर्क डेटा एनालिटिक्स</li>
-          </ul>
-          <p data-en="The practical sessions covered with the hands-on shall provide the confidence in the participants in their research implementations. The attendees at the end of this workshop will be technically competent in the basic concepts with the components of 5G, IoT and Machine Learning. In addition, the open source tools to build and evaluate predictors shall be presented with the usage patterns of computer algorithms for assorted applications." data-hi="प्रतिभागी 5G, IoT और मशीन लर्निंग की बुनियादी अवधारणाओं में तकनीकी रूप से सक्षम होंगे, साथ ही भविष्यवाणी मॉडल बनाने व मूल्यांकन हेतु ओपन-सोर्स से परिचित होंगे।">प्रतिभागी 5G, IoT और मशीन लर्निंग की बुनियादी अवधारणाओं में तकनीकी रूप से सक्षम होंगे, साथ ही भविष्यवाणी मॉडल बनाने व मूल्यांकन हेतु ओपन-सोर्स से परिचित होंगे।</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 Coverage -->
-  <section class="section section-alt" id="topics">
-    <div class="section-inner">
-      <p class="section-eyebrow" data-en="04 — Coverage" data-hi="०४ — विषय">०४ — विषय</p>
-      <h2 class="section-title" data-en="Tentative Contents to be Covered in Seminar" data-hi="संगोष्ठी में शामिल किए जाने वाले विषय">संगोष्ठी में शामिल किए जाने वाले विषय</h2>
-      <div class="topics-grid" id="topicsGrid"></div>
-    </div>
-  </section>
-
-  <!-- 05 Resource Persons -->
- <section class="section" id="speakers">
-    <div class="section-inner">
-      <p class="section-eyebrow" data-en="05 — Resource Persons" data-hi="०५ — संसाधन व्यक्ति">०५ — संसाधन व्यक्ति</p>
-      <h2 class="section-title" data-en="Tentative Speakers" data-hi="वक्ता एवं सत्र">वक्ता एवं सत्र</h2>
-      <div class="speakers-grid" id="speakersGrid">
-      
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Prof. Sarbani Roy" data-hi="प्रो. सर्बनी रॉय">Prof. Sarbani Roy</h3>
-            <p class="speaker-affil" data-en="Jadavpur University" data-hi="जादवपुर विश्वविद्यालय">Jadavpur University</p>
-          </div>
-        </article>
-
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍💻</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Mr. Kapil Bhutani" data-hi="श्री कपिल भुटानी">Mr. Kapil Bhutani</h3>
-            <p class="speaker-affil" data-en="Telcocrats, Mohali" data-hi="टेलकोक्रेट्स, मोहाली">Telcocrats, Mohali</p>
-          </div>
-        </article>
-
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Sunirmal Khatua" data-hi="डॉ. सुनिर्मल खटुआ">Dr. Sunirmal Khatua</h3>
-            <p class="speaker-affil" data-en="University of Calcutta" data-hi="कलकत्ता विश्वविद्यालय">University of Calcutta</p>
-          </div>
-        </article>
-
-        <article class="speaker-card">
-          <div class="speaker-avatar">👩‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Sujata Pal" data-hi="डॉ. सुजाता पाल">Dr. Sujata Pal</h3>
-            <p class="speaker-affil" data-en="IIT Ropar" data-hi="आईआईटी रोपड़">IIT Ropar</p>
-          </div>
-        </article>
-
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Rakesh Kumar" data-hi="डॉ. राकेश कुमार">Dr. Rakesh Kumar</h3>
-            <p class="speaker-affil" data-en="CUH Mahendergarh" data-hi="सीयूएच महेंद्रगढ़">CUH Mahendergarh</p>
-          </div>
-        </article>
-
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Prof. Mayank Dave" data-hi="प्रो. मयंक दवे">Prof. Mayank Dave</h3>
-            <p class="speaker-affil" data-en="NIT Kurukshetra" data-hi="एनआईटी कुरुक्षेत्र">NIT Kurukshetra</p>
-          </div>
-        </article>
-
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Gaurav Kumar" data-hi="डॉ. गौरव कुमार">Dr. Gaurav Kumar</h3>
-            <p class="speaker-affil" data-en="Magma Research and Consultancy" data-hi="मैग्मा रिसर्च एंड कंसल्टेंसी">Magma Research and Consultancy</p>
-          </div>
-        </article>
-
-        <article class="speaker-card">
-          <div class="speaker-avatar">👩‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Er. Meenu Dhiman" data-hi="इंजीनियर मीनू धीमान">Er. Meenu Dhiman</h3>
-            <p class="speaker-affil" data-en="MSME DFO Karnal, GoI" data-hi="एमएसएमई डीएफओ करनाल, भारत सरकार">MSME DFO Karnal, GoI</p>
-          </div>
-        </article>
-
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍💻</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Mr. Vipin Gupta" data-hi="श्री विपिन गुप्ता">Mr. Vipin Gupta</h3>
-            <p class="speaker-affil" data-en="U-Net Solutions" data-hi="यू-नेट सॉल्यूशंस">U-Net Solutions</p>
-          </div>
-        </article>
-
-        <article class="speaker-card speaker-card-more">
-          <div class="speaker-avatar">✨</div>
-          <div class="speaker-info" style="display: flex; align-items: center; justify-content: center; height: 100%;">
-            <h3 class="speaker-name" style="color: var(--accent); font-size: 1.3rem; margin: 0;" data-en="Many more..." data-hi="और भी कई...">और भी कई...</h3>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 Target Participants -->
-  <section class="section section-alt" id="participants">
-    <div class="section-inner participants-inner">
-      <div>
-        <p class="section-eyebrow" data-en="06 — Target Participants" data-hi="०६ — लक्षित प्रतिभागी">०६ — लक्षित प्रतिभागी</p>
-        <h2 class="section-title" data-en="Targeted Participants" data-hi="लक्षित प्रतिभागी">लक्षित प्रतिभागी</h2>
-        <p class="participants-note" data-en="Any other person who want to learn the concepts of IoT and its applications." data-hi="कोई भी अन्य व्यक्ति जो IoT और इसके अनुप्रयोगों की अवधारणाओं को सीखना चाहता है।">कोई भी अन्य व्यक्ति जो IoT और इसके अनुप्रयोगों की अवधारणाओं को सीखना चाहता है।</p>
-      </div>
-      <ul class="participants-list">
-        <li data-en="Faculty Members" data-hi="संकाय सदस्य">संकाय सदस्य</li>
-        <li data-en="Research Scholars" data-hi="शोध विद्वान">शोध विद्वान</li>
-        <li data-en="Software Developers" data-hi="सॉफ्टवेयर डेवलपर्स">सॉफ्टवेयर डेवलपर्स</li>
-        <li data-en="Network Engineers" data-hi="नेटवर्क इंजीनियर">नेटवर्क इंजीनियर</li>
-        <li data-en="Data Analysts" data-hi="डेटा विश्लेषक">डेटा विश्लेषक</li>
-        <li data-en="Young Engineers" data-hi="युवा इंजीनियर">युवा इंजीनियर</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 07 Registration Open Soon -->
-<section class="section section-dark" id="register">
-    <div class="section-inner register-inner">
-      <p class="section-eyebrow section-eyebrow-light" data-en="07 — Registration" data-hi="०७ — पंजीकरण">०७ — पंजीकरण</p>
-      <h2 class="section-title-light" data-en="Register for the Seminar" data-hi="संगोष्ठी के लिए पंजीकरण करें">संगोष्ठी के लिए पंजीकरण करें</h2>
-      <p class="register-copy" data-en="Click the link below to access the official AICTE ATAL Academy portal to complete your registration. You can also download the NOC form for your official procedures." data-hi="अपना पंजीकरण पूरा करने के लिए आधिकारिक AICTE ATAL अकादमी पोर्टल पर जाने के लिए नीचे दिए गए लिंक पर क्लिक करें। आप अपनी आधिकारिक प्रक्रियाओं के लिए NOC फॉर्म भी डाउनलोड कर सकते हैं।">अपना पंजीकरण पूरा करने के लिए आधिकारिक AICTE ATAL अकादमी पोर्टल पर जाने के लिए नीचे दिए गए लिंक पर क्लिक करें। आप अपनी आधिकारिक प्रक्रियाओं के लिए NOC फॉर्म भी डाउनलोड कर सकते हैं।</p>
-      <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="https://atalacademy.aicte.gov.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-en="Register on ATAL Portal" data-hi="ATAL पोर्टल पर पंजीकरण करें" style="background: var(--accent); color: #fff;">ATAL पोर्टल पर पंजीकरण करें</a>
-        <a href="sample-noc.pdf" id="sectionDownloadBtn" class="btn btn-primary" download="AICTE_NOC.pdf" data-en="Download NOC Form" data-hi="NOC फॉर्म डाउनलोड करें" style="background: var(--accent); color: #fff;">NOC फॉर्म डाउनलोड करें</a>
-      </div>
-    </div>
-  </section>
-  <!-- 08 Co-ordinators -->
-  <section class="section" id="contact">
-    <div class="section-inner">
-      <p class="section-eyebrow" data-en="08 — Co-ordinators" data-hi="०८ — समन्वयक">०८ — समन्वयक</p>
-      <h2 class="section-title" data-en="Coordinators" data-hi="समन्वयक">समन्वयक</h2>
-      <div class="contact-grid">
-        <article class="contact-card">
-          <span class="contact-role" data-en="Coordinator" data-hi="समन्वयक">समन्वयक</span>
-          <h3>Dr. Rakesh Kumar</h3>
-          <p data-en="Professor and Former Head, Department of Computer Science and Engineering, School of Engineering &amp; Technology, Central University of Haryana, Mahendergarh(Haryana)-123031" data-hi="प्रोफेसर एवं पूर्व अध्यक्ष, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031">प्रोफेसर एवं पूर्व अध्यक्ष, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031</p>
-          <div class="contact-line"><span data-en="Phone" data-hi="फोन">फोन</span>: +91-1285-260188 (O), +91-9416327669 (M)</div>
-        </article>
-        <article class="contact-card">
-          <span class="contact-role" data-en="Co-Coordinator" data-hi="सह-समन्वयक">सह-समन्वयक</span>
-          <h3>Dr. Nitin Goyal</h3>
-          <p data-en="Asst. Professor, Department of Computer Science and Engineering, School of Engineering &amp; Technology, Central University of Haryana, Mahendergarh(Haryana)-123031" data-hi="सहायक प्रोफेसर, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031">सहायक प्रोफेसर, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031</p>
-          <div class="contact-line"><span data-en="Phone" data-hi="फोन">फोन</span>: +91-1285-260247 (O), +91-9896530089 (M)</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-<section class="section section-alt" id="committee">
-  <div class="section-inner">
-    <p class="section-eyebrow" data-en="09 — Committee" data-hi="०९ — समिति">०९ — समिति</p>
-    <h2 class="section-title" data-en="Committee Members" data-hi="समिति के सदस्य एवं स्वयंसेवक">समिति के सदस्य एवं स्वयंसेवक</h2>
-    
-    <!-- Core Leadership / Patrons Section -->
-    <div style="margin-bottom: 2.5rem;">
-      <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Leadership & Patrons" data-hi="मुख्य संरक्षक एवं अधिकारी">मुख्य संरक्षक एवं अधिकारी</h3>
-      <div class="speakers-grid">
-        <article class="speaker-card">
-          <div class="speaker-avatar">🏛️</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Prof. (Dr.) Tankeshwar Kumar" data-hi="प्रो. (डॉ.) टंकेश्वर कुमार">Prof. (Dr.) Tankeshwar Kumar</h3>
-            <p class="speaker-affil" data-en="Chief Patron (Vice-Chancellor)" data-hi="मुख्य संरक्षक (कुलपति)">Chief Patron</p>
-            <p style="font-size: 0.75rem; opacity: 0.7; margin: 0.1rem 0 0 0;" data-en="Vice-Chancellor" data-hi="कुलपति">Vice-Chancellor</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">🏛️</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Prof. (Dr.) Pawan Kumar Sharma" data-hi="प्रो. (डॉ.) पवन कुमार शर्मा">Prof. (Dr.) Pawan Kumar Sharma</h3>
-            <p class="speaker-affil" data-en="Patron (Pro-Vice-Chancellor)" data-hi="संरक्षक (प्रतिकुलपति)">Patron</p>
-            <p style="font-size: 0.75rem; opacity: 0.7; margin: 0.1rem 0 0 0;" data-en="Pro-Vice-Chancellor" data-hi="प्रतिकुलपति">Pro-Vice-Chancellor</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">🏛️</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Prof. (Dr.) Suneel Kumar" data-hi="प्रो. (डॉ.) सुनील कुमार">Prof. (Dr.) Suneel Kumar</h3>
-            <p class="speaker-affil" data-en="Co-Patron (Registrar)" data-hi="सह-संरक्षक (कुलसचिव)">Co-Patron</p>
-            <p style="font-size: 0.75rem; opacity: 0.7; margin: 0.1rem 0 0 0;" data-en="Registrar" data-hi="कुलसचिव">Registrar</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">🏛️</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Vipin Kumar" data-hi="डॉ. विपिन कुमार">Dr. Vipin Kumar</h3>
-            <p class="speaker-affil" data-en="Chairperson & HoD CSE" data-hi="अध्यक्ष एवं विभागाध्यक्ष (कंप्यूटर साइंस)">Chairperson & HoD CSE</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">📋</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Prof. (Dr.) Rakesh Kumar" data-hi="प्रो. (डॉ.) राकेश कुमार">Prof. (Dr.) Rakesh Kumar</h3>
-            <p class="speaker-affil" data-en="Convener" data-hi="संयोजक">Convener</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">📋</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Nitin Goyal" data-hi="डॉ. नितिन गोयल">Dr. Nitin Goyal</h3>
-            <p class="speaker-affil" data-en="Co-Convener" data-hi="सह-संयोजक">Co-Convener</p>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <!-- Faculty Members Section -->
-    <div style="margin-bottom: 2.5rem;">
-      <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Faculty Members" data-hi="संकाय सदस्य">संकाय सदस्य</h3>
-      <div class="speakers-grid">
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Vishal Passricha" data-hi="डॉ. विशाल पसरीचा">Dr. Vishal Passricha</h3>
-            <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Sushil Kumar" data-hi="डॉ. सुशील कुमार">Dr. Sushil Kumar</h3>
-            <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">👨‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Mr. Anant Rajee Bara" data-hi="श्री अनंत राजी बारा">Mr. Anant Rajee Bara</h3>
-            <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">👩‍🏫</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Dr. Sangeeta" data-hi="डॉ. संगीता">Dr. Sangeeta</h3>
-            <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor</p>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <!-- Technical Support Section -->
-    <div style="margin-bottom: 2.5rem;">
-      <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Technical Support" data-hi="तकनीकी सहायता">तकनीकी सहायता</h3>
-      <div class="speakers-grid">
-        <article class="speaker-card">
-          <div class="speaker-avatar">💻</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Mr. Amit Sheron" data-hi="श्री अमित शेरोन">Mr. Amit Sheron</h3>
-            <p class="speaker-affil" data-en="System Analyst" data-hi="सिस्टम विश्लेषक">System Analyst</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">💻</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Mr. Rahul Sharma" data-hi="श्री राहुल शर्मा">Mr. Rahul Sharma</h3>
-            <p class="speaker-affil" data-en="Senior Technical Assistant" data-hi="वरिष्ठ तकनीकी सहायक">Senior Technical Assistant</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">💻</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Mr. Arun" data-hi="श्री अरुण">Mr. Arun</h3>
-            <p class="speaker-affil" data-en="Laboratory Assistant" data-hi="प्रयोगशाला सहायक">Laboratory Assistant</p>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <!-- Student Volunteers Section -->
-    <div>
-      <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Student Volunteers" data-hi="छात्र स्वयंसेवक">छात्र स्वयंसेवक</h3>
-      <div class="speakers-grid">
-        <article class="speaker-card">
-          <div class="speaker-avatar">🧑‍🎓</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Mr. Harsh Sharma" data-hi="श्री हर्ष शर्मा">Mr. Harsh Sharma</h3>
-            <p class="speaker-affil" data-en="Student Volunteer" data-hi="छात्र स्वयंसेवक">Student Volunteer</p>
-          </div>
-        </article>
-        <article class="speaker-card">
-          <div class="speaker-avatar">🧑‍🎓</div>
-          <div class="speaker-info">
-            <h3 class="speaker-name" data-en="Mr. Abhishek Kumar" data-hi="श्री अभिषेक कुमार">Mr. Abhishek Kumar</h3>
-            <p class="speaker-affil" data-en="Student Volunteer" data-hi="छात्र स्वयंसेवक">Student Volunteer</p>
-          </div>
-        </article>
-      </div>
-    </div>
-
+  <div style="background-color: #eab308; color: #1e293b; padding: 10px 0; font-weight: 600;">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      📢 Important Notice: Participants can download their NOC below
+    </marquee>
   </div>
-</section>
-</main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <strong data-en="AICTE Sponsored National Seminar" data-hi="AICTE प्रायोजित राष्ट्रीय संगोष्ठी">AICTE प्रायोजित राष्ट्रीय संगोष्ठी</strong>
-      <span data-en="Department of Computer Science &amp; Engineering · Central University of Haryana" data-hi="कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग · केंद्रीय विश्वविद्यालय हरियाणा">कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग · केंद्रीय विश्वविद्यालय हरियाणा</span>
-    </div>
-    <div class="footer-meta">
-      <span>15–16 Oct 2026</span>
-      <span data-en="Mahendergarh, Haryana" data-hi="महेंद्रगढ़, हरियाणा">महेंद्रगढ़, हरियाणा</span>
-    </div>
-  </div>
-  <div class="footer-bottom" data-en="© 2026 Central University of Haryana. All rights reserved." data-hi="© 2026 केंद्रीय विश्वविद्यालय हरियाणा। सर्वाधिकार सुरक्षित।">© 2026 केंद्रीय विश्वविद्यालय हरियाणा। सर्वाधिकार सुरक्षित।</div>
-</footer>
 
-<script src="script.js"></script>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#top" class="brand">
+        <img src="https://www.cuh.ac.in/logo.png" alt="Central University of Haryana" class="brand-logo">
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#about" data-en="About" data-hi="परिचय">परिचय</a>
+        <a href="#vaani" data-en="VAANI Scheme" data-hi="वाणी योजना">वाणी योजना</a>
+        <a href="#objectives" data-en="Objectives" data-hi="उद्देश्य">उद्देश्य</a>
+        <a href="#topics" data-en="Coverage" data-hi="विषय">विषय</a>
+        <a href="#speakers" data-en="Speakers" data-hi="वक्ता">वक्ता</a>
+        <a href="#participants" data-en="Participants" data-hi="प्रतिभागी">प्रतिभागी</a>
+        <a href="#register" data-en="Registration" data-hi="पंजीकरण">पंजीकरण</a>
+        <a href="#contact" data-en="Coordinators" data-hi="समन्वयक">समन्वयक</a>
+        <a href="#committee" data-en="Committee" data-hi="समिति">समिति</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-opt" data-val="en">EN</span><span class="lang-sep">/</span><span class="lang-opt"
+            data-val="hi">हिं</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- Top Row with Logos on the sides and badges in the center -->
+        <div class="eyebrow-row"
+          style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 1.5rem;">
+
+          <!-- Left Logo (AICTE) -->
+          <div class="hero-logo-left">
+            <img src="aicte-logo.png" alt="AICTE Logo" style="height: 80px; width: auto; object-fit: contain;">
+          </div>
+
+          <!-- Center Badges -->
+          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <div class="aicte-sponsor-wrap">
+              <span data-en="AICTE Sponsored" data-hi="अ.भा.त.शि.प. प्रायोजित">प्रायोजित</span>
+            </div>
+            <span class="pill pill-outline" data-en="Two-Day National Seminar" data-hi="दो दिवसीय राष्ट्रीय संगोष्ठी">दो
+              दिवसीय राष्ट्रीय संगोष्ठी</span>
+          </div>
+
+          <!-- Right Logo (Central University of Haryana) -->
+          <div class="hero-logo-right">
+            <img src="cuh-logo.png" alt="CUH Logo" style="height: 85px; width: auto; object-fit: contain;">
+          </div>
+
+        </div>
+
+        <h1 class="hero-title">
+          <span data-en="Towards Next&nbsp;Gen Communication with Artificial Intelligence &amp; IoT"
+            data-hi="कृत्रिम बुद्धिमत्ता और IoT के साथ अगली पीढ़ी के संचार की ओर">कृत्रिम बुद्धिमत्ता और IoT के साथ अगली
+            पीढ़ी के संचार की ओर</span>
+        </h1>
+
+        <p class="hero-sub"
+          data-en="Two days of keynotes, hands-on demos and open-source tooling on 5G, IoT and Machine Learning — hosted by the Department of Computer Science &amp; Engineering, Central University of Haryana."
+          data-hi="5G, IoT और मशीन लर्निंग पर मुख्य वक्तव्य, व्यावहारिक प्रदर्शन और ओपन-सोर्स टूल्स के दो दिन — कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, केंद्रीय विश्वविद्यालय हरियाणा द्वारा आयोजित।">
+          5G, IoT और मशीन लर्निंग पर मुख्य वक्तव्य, व्यावहारिक प्रदर्शन और ओपन-सोर्स टूल्स के दो दिन — कंप्यूटर विज्ञान
+          एवं इंजीनियरिंग विभाग, केंद्रीय विश्वविद्यालय हरियाणा द्वारा आयोजित।
+        </p>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-label" data-en="Dates" data-hi="तिथियाँ">तिथियाँ</span>
+            <span class="meta-value">15–16 Oct 2026</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-item">
+            <span class="meta-label" data-en="Venue" data-hi="स्थान">स्थान</span>
+            <span class="meta-value" data-en="Central University of Haryana, Mahendergarh"
+              data-hi="केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़">केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://atalacademy.aicte.gov.in/" class="btn btn-primary" data-en="Register Interest"
+            data-hi="पंजीकरण करें">पंजीकरण करें</a>
+          <a href="sample-noc.pdf" id="heroDownloadBtn" class="btn btn-ghost" download="AICTE_NOC.pdf"
+            data-en="Download NOC" data-hi="NOC डाउनलोड करें"
+            style="border-color: var(--accent); color: var(--accent);">NOC डाउनलोड करें</a>
+          <a href="#about" class="btn btn-ghost" data-en="Learn More" data-hi="और जानें">और जानें</a>
+        </div>
+
+        <!-- Free Registration Note Box -->
+        <div
+          style="margin: -0.25rem 0 1.5rem 0; display: inline-block; padding: 0.6rem 1rem; background: #b45309; border: 1px solid #92400e; border-radius: 8px;">
+          <span style="font-size: 0.95rem; font-weight: 600; color: #ffffff;"
+            data-en="✨ Free Registration — No Registration Fee Required"
+            data-hi="✨ निःशुल्क पंजीकरण — कोई पंजीकरण शुल्क आवश्यक नहीं है">✨ निःशुल्क पंजीकरण — कोई पंजीकरण शुल्क
+            आवश्यक नहीं है</span>
+        </div>
+        <div class="countdown" id="countdown" aria-live="polite" style="margin-bottom: 2.5rem;">
+          <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label" data-en="Days"
+              data-hi="दिन">दिन</span></div>
+          <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label" id="cdHours-label"
+              data-en="Hours" data-hi="घंटे">घंटे</span></div>
+          <div class="cd-box"><span class="cd-num" id="cdMins">00</span><span class="cd-label" id="cdMins-label"
+              data-en="Mins" data-hi="मिनट">मिनट</span></div>
+          <div class="cd-box"><span class="cd-num" id="cdSecs">00</span><span class="cd-label" id="cdSecs-label"
+              data-en="Secs" data-hi="सेकंड">सेकंड</span></div>
+        </div>
+
+
+        <div
+          style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.75rem; width: 100%; text-align: center;">
+
+          <!-- 1. Chief Patron -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div
+              style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+              <img src="images/tankeshwar.png" alt="Prof. (Dr.) Tankeshwar Kumar"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;"
+              data-en="Prof. (Dr.) Tankeshwar Kumar" data-hi="प्रो. (डॉ.) टंकेश्वर कुमार">Prof. (Dr.) Tankeshwar Kumar
+            </h4>
+            <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Chief Patron"
+              data-hi="मुख्य संरक्षक">Chief Patron</p>
+            <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="Vice-Chancellor" data-hi="कुलपति">
+              Vice-Chancellor</p>
+          </div>
+
+          <!-- 2. Patron -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div
+              style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+              <img src="images/pawan.png" alt="Prof. (Dr.) Pawan Kumar Sharma"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;"
+              data-en="Prof. (Dr.) Pawan Kumar Sharma" data-hi="प्रो. (डॉ.) पवन कुमार शर्मा">Prof. (Dr.) Pawan Kumar
+              Sharma</h4>
+            <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Patron"
+              data-hi="संरक्षक">Patron</p>
+            <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="Pro-Vice-Chancellor" data-hi="प्रतिकुलपति">
+              Pro-Vice-Chancellor</p>
+          </div>
+
+          <!-- 3. Co-Patron -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div
+              style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+              <img src="images/suneel.png" alt="Prof. (Dr.) Suneel Kumar"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Suneel Kumar"
+              data-hi="प्रो. (डॉ.) सुनील कुमार">Prof. (Dr.) Suneel Kumar</h4>
+            <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Co-Patron"
+              data-hi="सह-संरक्षक">Co-Patron</p>
+            <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="Registrar" data-hi="कुलसचिव">Registrar</p>
+          </div>
+
+          <!-- 4. Chairperson (Prof. (Dr.) Vikas Garg) -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div
+              style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+              <img src="images/vikas.png" alt="Prof. (Dr.) Vikas Garg"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Vikas Garg"
+              data-hi="प्रो. (डॉ.) विकास गर्ग">Prof. (Dr.) Vikas Garg</h4>
+            <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Chairperson"
+              data-hi="अध्यक्ष">Chairperson</p>
+            <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="Dean, SoET" data-hi="डीन, सोएट">Dean, SoET
+            </p>
+          </div>
+
+          <!-- 5. Co-Chairperson (Dr. Vipin Kumar) -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div
+              style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+              <img src="images/vipin.png" alt="Dr. Vipin Kumar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Dr. Vipin Kumar"
+              data-hi="डॉ. विपिन कुमार">Dr. Vipin Kumar</h4>
+            <p style="font-size: 0.75rem; opacity: 0.8; margin: 0; font-weight: 500;" data-en="Co-Chairperson"
+              data-hi="सह-अध्यक्ष">Co-Chairperson</p>
+            <p style="font-size: 0.7rem; opacity: 0.6; margin: 0;" data-en="HoD, CSE"
+              data-hi="विभागाध्यक्ष, कंप्यूटर साइंस">HoD, CSE</p>
+          </div>
+
+          <!-- 6. Convener -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div
+              style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+              <img src="images/rakesh.png" alt="Prof. (Dr.) Rakesh Kumar"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Prof. (Dr.) Rakesh Kumar"
+              data-hi="प्रो. (डॉ.) राकेश कुमार">Prof. (Dr.) Rakesh Kumar</h4>
+            <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Convener" data-hi="संयोजक">Convener</p>
+          </div>
+
+          <!-- 7. Co-Convener (Dr. Nitin Goyal) -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div
+              style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; border: 2px solid var(--accent, #3b82f6);">
+              <img src="images/nitin.png" alt="Dr. Nitin Goyal" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="font-size: 0.8rem; font-weight: 600; margin: 0 0 0.2rem 0;" data-en="Dr. Nitin Goyal"
+              data-hi="डॉ. नितिन गोयल">Dr. Nitin Goyal</h4>
+            <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;" data-en="Co-Convener" data-hi="सह-संयोजक">
+              Co-Convener</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="hero-scroll-cue" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- 01 About -->
+    <section class="section" id="about">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-en="01 — About" data-hi="०१ — परिचय">०१ — परिचय</p>
+        <div class="about-grid">
+          <article class="about-card">
+            <h2 data-en="About the University" data-hi="विश्वविद्यालय के बारे में">विश्वविद्यालय के बारे में</h2>
+            <p data-en="Central University of Haryana is a Central University established under the Central Universities Act, 2009 of the Parliament. It is one of the 15 Central Universities established by MHRD, GoI under the XIth Five Year Plan (2007-12). The University is fully funded by the UGC. The university is awarded A grade by NAAC. Central University of Haryana is one of the renowned central universities in India offering various undergraduate programs in Engineering &amp; postgraduate programs under multiple streams including Arts, Science, Commerce, Management, Computer Applications, Library Science, etc. Apart from these, it also offers research courses in several specializations under Arts, Science and engineering."
+              data-hi="केंद्रीय विश्वविद्यालय हरियाणा संसद के केंद्रीय विश्वविद्यालय अधिनियम, 2009 के तहत स्थापित एक केंद्रीय विश्वविद्यालय है। यह MHRD, GoI द्वारा ग्यारहवीं पंचवर्षीय योजना (2007-12) के तहत स्थापित 15 केंद्रीय विश्वविद्यालयों में से एक है। विश्वविद्यालय पूरी तरह से UGC द्वारा वित्त पोषित है और NAAC द्वारा A ग्रेड से सम्मानित है। CUH इंजीनियरिंग में स्नातक कार्यक्रम और कला, विज्ञान, वाणिज्य, प्रबंधन, कंप्यूटर अनुप्रयोग व पुस्तकालय विज्ञान सहित कई धाराओं में स्नातकोत्तर कार्यक्रम प्रदान करता है, साथ ही कला, विज्ञान और इंजीनियरिंग में शोध पाठ्यक्रम भी प्रदान करता है।">
+              केंद्रीय विश्वविद्यालय हरियाणा संसद के केंद्रीय विश्वविद्यालय अधिनियम, 2009 के तहत स्थापित एक केंद्रीय
+              विश्वविद्यालय है। यह MHRD, GoI द्वारा ग्यारहवीं पंचवर्षीय योजना (2007-12) के तहत स्थापित 15 केंद्रीय
+              विश्वविद्यालयों में से एक है। विश्वविद्यालय पूरी तरह से UGC द्वारा वित्त पोषित है और NAAC द्वारा A ग्रेड
+              से सम्मानित है। CUH इंजीनियरिंग में स्नातक कार्यक्रम और कला, विज्ञान, वाणिज्य, प्रबंधन, कंप्यूटर अनुप्रयोग
+              व पुस्तकालय विज्ञान सहित कई धाराओं में स्नातकोत्तर कार्यक्रम प्रदान करता है, साथ ही कला, विज्ञान और
+              इंजीनियरिंग में शोध पाठ्यक्रम भी प्रदान करता है।
+            </p>
+          </article>
+          <article class="about-card">
+            <h2 data-en="About the Department" data-hi="विभाग के बारे में">विभाग के बारे में</h2>
+            <p data-en="The Department of Computer Science and Engineering started in the year 2016 under the umbrella of the School of Engineering &amp; Technology with the aim to impart high quality and practical education to the students in the field of Computer Science and Engineering. The department is currently offering a B. Tech., M.Tech. and PhD programme in CSE. The department has a highly qualified faculty members who are working on the thrust areas like WSN, Cloud Computing, Network Security, Computer Vision and Multimedia, IoT and Health Informatics, Machine Learning and Data Mining etc."
+              data-hi="कंप्यूटर विज्ञान और इंजीनियरिंग विभाग की शुरुआत वर्ष 2016 में स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी के अंतर्गत हुई थी, जिसका उद्देश्य CSE में उच्च गुणवत्ता और व्यावहारिक शिक्षा प्रदान करना है। विभाग वर्तमान में B. Tech., M.Tech. और PhD कार्यक्रम प्रदान करता है, जिसके संकाय सदस्य WSN, क्लाउड कंप्यूटिंग, नेटवर्क सुरक्षा, कंप्यूटर विजन और मल्टीमीडिया, IoT और स्वास्थ्य सूचना विज्ञान, तथा मशीन लर्निंग और डेटा माइनिंग जैसे क्षेत्रों पर कार्यरत हैं।">
+              कंप्यूटर विज्ञान और इंजीनियरिंग विभाग की शुरुआत वर्ष 2016 में स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी के
+              अंतर्गत हुई थी, जिसका उद्देश्य CSE में उच्च गुणवत्ता और व्यावहारिक शिक्षा प्रदान करना है। विभाग वर्तमान
+              में B. Tech., M.Tech. और PhD कार्यक्रम प्रदान करता है, जिसके संकाय सदस्य WSN, क्लाउड कंप्यूटिंग, नेटवर्क
+              सुरक्षा, कंप्यूटर विजन और मल्टीमीडिया, IoT और स्वास्थ्य सूचना विज्ञान, तथा मशीन लर्निंग और डेटा माइनिंग
+              जैसे क्षेत्रों पर कार्यरत हैं।
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 AICTE VAANI Scheme -->
+    <section class="section section-alt" id="vaani">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-en="02 — AICTE VAANI Scheme" data-hi="०२ — एआईसीटीई वाणी योजना">०२ — एआईसीटीई
+          वाणी योजना</p>
+        <div class="about-grid" style="grid-template-columns: 1fr;">
+          <article class="about-card">
+            <h2 data-en="AICTE VAANI Scheme" data-hi="एआईसीटीई वाणी योजना">एआईसीटीई वाणी योजना</h2>
+            <p data-en="Vibrant Advocacy for Advancement and Nurturing of Indian Languages (VAANI) is a premier initiative by the All India Council for Technical Education (AICTE) to promote technical education and content dissemination across regional Indian languages. In alignment with the national vision of *Viksit Bharat 2047*, this scheme provides financial assistance to eligible institutions to organize conferences, seminars, and workshops in 22 scheduled Indian languages. By bridging language gaps in higher education, the VAANI scheme empowers researchers, faculty, and working professionals to explore cutting-edge engineering domains—such as Artificial Intelligence, IoT, and Next-Gen Communications—in their native languages."
+              data-hi="वाइब्रेंट एडवोकेसी फॉर एडवांस्मेंट एंड नर्चरिंग ऑफ इंडियन लैंग्वेजेज (VAANI) अखिल भारतीय तकनीकी शिक्षा परिषद (AICTE) की एक प्रमुख पहल है, जिसका उद्देश्य क्षेत्रीय भारतीय भाषाओं में तकनीकी शिक्षा और सामग्री के प्रसार को बढ़ावा देना है। विकसित भारत 2047 के राष्ट्रीय विजन के अनुरूप, यह योजना 22 अनुसूचित भारतीय भाषाओं में सम्मेलनों, सेमिनारों और कार्यशालाओं के आयोजन के लिए पात्र संस्थानों को वित्तीय सहायता प्रदान करती है। उच्च शिक्षा में भाषा की बाधा को पाटने के माध्यम से, यह योजना शोधकर्ताओं, संकाय सदस्यों और पेशेवरों को अपनी मातृभाषा में कृत्रिम बुद्धिमत्ता, IoT और अगली पीढ़ी के संचार जैसे अत्याधुनिक तकनीकी क्षेत्रों का पता लगाने के लिए सशक्त बनाती है।">
+              वाइब्रेंट एडवोकेसी फॉर एडवांस्मेंट एंड नर्चरिंग ऑफ इंडियन लैंग्वेजेज (VAANI) अखिल भारतीय तकनीकी शिक्षा
+              परिषद (AICTE) की एक प्रमुख पहल है, जिसका उद्देश्य क्षेत्रीय भारतीय भाषाओं में तकनीकी शिक्षा और सामग्री के
+              प्रसार को बढ़ावा देना है। विकसित भारत 2047 के राष्ट्रीय विजन के अनुरूप, यह योजना 22 अनुसूचित भारतीय भाषाओं
+              में सम्मेलनों, सेमिनारों और कार्यशालाओं के आयोजन के लिए पात्र संस्थानों को वित्तीय सहायता प्रदान करती है।
+              उच्च शिक्षा में भाषा की बाधा को पाटने के माध्यम से, यह योजना शोधकर्ताओं, संकाय सदस्यों और पेशेवरों को अपनी
+              मातृभाषा में कृत्रिम बुद्धिमत्ता, IoT और अगली पीढ़ी के संचार जैसे अत्याधुनिक तकनीकी क्षेत्रों का पता लगाने
+              के लिए सशक्त बनाती है।
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Objective and Outcome -->
+    <section class="section" id="objectives">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-en="03 — Objective and Outcome" data-hi="०३ — उद्देश्य और परिणाम">०३ — उद्देश्य
+          और परिणाम</p>
+        <div class="objectives-outcomes-vertical">
+          <div class="oo-block">
+            <h3 class="large-heading" data-en="Objectives" data-hi="उद्देश्य">उद्देश्य</h3>
+            <ul class="check-list">
+              <li
+                data-en="To train the researchers, academicians with the basic technologies of 5G, Internet of Things and Machine Learning."
+                data-hi="शोधकर्ताओं और शिक्षाविदों को 5G, IoT और मशीन लर्निंग की बुनियादी तकनीकों में प्रशिक्षित करना।">
+                शोधकर्ताओं और शिक्षाविदों को 5G, IoT और मशीन लर्निंग की बुनियादी तकनीकों में प्रशिक्षित करना।</li>
+              <li
+                data-en="To deliver the practical sessions on IoT, Raspberry Pi, Arduino with the integration of Data Analytics, Machine Learning Approaches with the Problem Statement and Solutions oriented approach."
+                data-hi="डेटा एनालिटिक्स और ML दृष्टिकोणों के साथ IoT, Raspberry Pi और Arduino पर व्यावहारिक सत्र प्रदान करना।">
+                डेटा एनालिटिक्स और ML दृष्टिकोणों के साथ IoT, Raspberry Pi और Arduino पर व्यावहारिक सत्र प्रदान करना।
+              </li>
+              <li
+                data-en="To present the cavernous understanding of the IoT algorithms for the researchers and practitioners."
+                data-hi="शोधकर्ताओं और व्यवसायियों के लिए IoT एल्गोरिदम की गहन समझ प्रस्तुत करना।">शोधकर्ताओं और
+                व्यवसायियों के लिए IoT एल्गोरिदम की गहन समझ प्रस्तुत करना।</li>
+              <li
+                data-en="To integrate the advance networks in research and development activities in the higher education with master’s /doctorate levels."
+                data-hi="मास्टर्स/डॉक्टरेट स्तर पर शोध व विकास गतिविधियों में उन्नत नेटवर्क को एकीकृत करना।">
+                मास्टर्स/डॉक्टरेट स्तर पर शोध व विकास गतिविधियों में उन्नत नेटवर्क को एकीकृत करना।</li>
+            </ul>
+          </div>
+          <div class="oo-block">
+            <h3 class="large-heading" data-en="Expected Outcome" data-hi="अपेक्षित परिणाम">अपेक्षित परिणाम</h3>
+            <p class="oo-lead"
+              data-en="The Seminar focuses on addressing key critical aspects with the implementations:"
+              data-hi="संगोष्ठी कार्यान्वयन के साथ प्रमुख पहलुओं को संबोधित करने पर केंद्रित है:">संगोष्ठी कार्यान्वयन
+              के साथ प्रमुख पहलुओं को संबोधित करने पर केंद्रित है:</p>
+            <ul class="tag-list">
+              <li data-en="5G Technology" data-hi="5G प्रौद्योगिकी">5G प्रौद्योगिकी</li>
+              <li data-en="Internet of Things" data-hi="इंटरनेट ऑफ थिंग्स">इंटरनेट ऑफ थिंग्स</li>
+              <li data-en="Machine Learning" data-hi="मशीन लर्निंग">मशीन लर्निंग</li>
+              <li data-en="Networks Data Analytics using Data Science" data-hi="नेटवर्क डेटा एनालिटिक्स">नेटवर्क डेटा
+                एनालिटिक्स</li>
+            </ul>
+            <p data-en="The practical sessions covered with the hands-on shall provide the confidence in the participants in their research implementations. The attendees at the end of this workshop will be technically competent in the basic concepts with the components of 5G, IoT and Machine Learning. In addition, the open source tools to build and evaluate predictors shall be presented with the usage patterns of computer algorithms for assorted applications."
+              data-hi="प्रतिभागी 5G, IoT और मशीन लर्निंग की बुनियादी अवधारणाओं में तकनीकी रूप से सक्षम होंगे, साथ ही भविष्यवाणी मॉडल बनाने व मूल्यांकन हेतु ओपन-सोर्स से परिचित होंगे।">
+              प्रतिभागी 5G, IoT और मशीन लर्निंग की बुनियादी अवधारणाओं में तकनीकी रूप से सक्षम होंगे, साथ ही भविष्यवाणी
+              मॉडल बनाने व मूल्यांकन हेतु ओपन-सोर्स से परिचित होंगे।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Coverage -->
+    <section class="section section-alt" id="topics">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-en="04 — Coverage" data-hi="०४ — विषय">०४ — विषय</p>
+        <h2 class="section-title" data-en="Tentative Contents to be Covered in Seminar"
+          data-hi="संगोष्ठी में शामिल किए जाने वाले विषय">संगोष्ठी में शामिल किए जाने वाले विषय</h2>
+        <div class="topics-grid" id="topicsGrid"></div>
+      </div>
+    </section>
+
+    <!-- 05 Resource Persons -->
+    <section class="section" id="speakers">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-en="05 — Resource Persons" data-hi="०५ — संसाधन व्यक्ति">०५ — संसाधन व्यक्ति</p>
+        <h2 class="section-title" data-en="Tentative Speakers" data-hi="वक्ता एवं सत्र">वक्ता एवं सत्र</h2>
+        <div class="speakers-grid" id="speakersGrid">
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👨‍🏫</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Prof. Sarbani Roy" data-hi="प्रो. सर्बनी रॉय">Prof. Sarbani Roy</h3>
+              <p class="speaker-affil" data-en="Jadavpur University" data-hi="जादवपुर विश्वविद्यालय">Jadavpur University
+              </p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👨‍💻</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Mr. Kapil Bhutani" data-hi="श्री कपिल भुटानी">Mr. Kapil Bhutani</h3>
+              <p class="speaker-affil" data-en="Telcocrats, Mohali" data-hi="टेलकोक्रेट्स, मोहाली">Telcocrats, Mohali
+              </p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👨‍🏫</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Dr. Sunirmal Khatua" data-hi="डॉ. सुनिर्मल खटुआ">Dr. Sunirmal Khatua
+              </h3>
+              <p class="speaker-affil" data-en="University of Calcutta" data-hi="कलकत्ता विश्वविद्यालय">University of
+                Calcutta</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👩‍🏫</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Dr. Sujata Pal" data-hi="डॉ. सुजाता पाल">Dr. Sujata Pal</h3>
+              <p class="speaker-affil" data-en="IIT Ropar" data-hi="आईआईटी रोपड़">IIT Ropar</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👨‍🏫</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Dr. Rakesh Kumar" data-hi="डॉ. राकेश कुमार">Dr. Rakesh Kumar</h3>
+              <p class="speaker-affil" data-en="CUH Mahendergarh" data-hi="सीयूएच महेंद्रगढ़">CUH Mahendergarh</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👨‍🏫</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Prof. Mayank Dave" data-hi="प्रो. मयंक दवे">Prof. Mayank Dave</h3>
+              <p class="speaker-affil" data-en="NIT Kurukshetra" data-hi="एनआईटी कुरुक्षेत्र">NIT Kurukshetra</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👨‍🏫</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Dr. Gaurav Kumar" data-hi="डॉ. गौरव कुमार">Dr. Gaurav Kumar</h3>
+              <p class="speaker-affil" data-en="Magma Research and Consultancy" data-hi="मैग्मा रिसर्च एंड कंसल्टेंसी">
+                Magma Research and Consultancy</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👩‍🏫</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Er. Meenu Dhiman" data-hi="इंजीनियर मीनू धीमान">Er. Meenu Dhiman</h3>
+              <p class="speaker-affil" data-en="MSME DFO Karnal, GoI" data-hi="एमएसएमई डीएफओ करनाल, भारत सरकार">MSME DFO
+                Karnal, GoI</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">👨‍💻</div>
+            <div class="speaker-info">
+              <h3 class="speaker-name" data-en="Mr. Vipin Gupta" data-hi="श्री विपिन गुप्ता">Mr. Vipin Gupta</h3>
+              <p class="speaker-affil" data-en="U-Net Solutions" data-hi="यू-नेट सॉल्यूशंस">U-Net Solutions</p>
+            </div>
+          </article>
+
+          <article class="speaker-card speaker-card-more">
+            <div class="speaker-avatar">✨</div>
+            <div class="speaker-info"
+              style="display: flex; align-items: center; justify-content: center; height: 100%;">
+              <h3 class="speaker-name" style="color: var(--accent); font-size: 1.3rem; margin: 0;"
+                data-en="Many more..." data-hi="और भी कई...">और भी कई...</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Target Participants -->
+    <section class="section section-alt" id="participants">
+      <div class="section-inner participants-inner">
+        <div>
+          <p class="section-eyebrow" data-en="06 — Target Participants" data-hi="०६ — लक्षित प्रतिभागी">०६ — लक्षित
+            प्रतिभागी</p>
+          <h2 class="section-title" data-en="Targeted Participants" data-hi="लक्षित प्रतिभागी">लक्षित प्रतिभागी</h2>
+          <p class="participants-note"
+            data-en="Any other person who want to learn the concepts of IoT and its applications."
+            data-hi="कोई भी अन्य व्यक्ति जो IoT और इसके अनुप्रयोगों की अवधारणाओं को सीखना चाहता है।">कोई भी अन्य व्यक्ति
+            जो IoT और इसके अनुप्रयोगों की अवधारणाओं को सीखना चाहता है।</p>
+        </div>
+        <ul class="participants-list">
+          <li data-en="Faculty Members" data-hi="संकाय सदस्य">संकाय सदस्य</li>
+          <li data-en="Research Scholars" data-hi="शोध विद्वान">शोध विद्वान</li>
+          <li data-en="Software Developers" data-hi="सॉफ्टवेयर डेवलपर्स">सॉफ्टवेयर डेवलपर्स</li>
+          <li data-en="Network Engineers" data-hi="नेटवर्क इंजीनियर">नेटवर्क इंजीनियर</li>
+          <li data-en="Data Analysts" data-hi="डेटा विश्लेषक">डेटा विश्लेषक</li>
+          <li data-en="Young Engineers" data-hi="युवा इंजीनियर">युवा इंजीनियर</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 07 Registration Open Soon -->
+    <section class="section section-dark" id="register">
+      <div class="section-inner register-inner">
+        <p class="section-eyebrow section-eyebrow-light" data-en="07 — Registration" data-hi="०७ — पंजीकरण">०७ — पंजीकरण
+        </p>
+        <h2 class="section-title-light" data-en="Register for the Seminar" data-hi="संगोष्ठी के लिए पंजीकरण करें">
+          संगोष्ठी के लिए पंजीकरण करें</h2>
+        <p class="register-copy"
+          data-en="Click the link below to access the official AICTE ATAL Academy portal to complete your registration. You can also download the NOC form for your official procedures."
+          data-hi="अपना पंजीकरण पूरा करने के लिए आधिकारिक AICTE ATAL अकादमी पोर्टल पर जाने के लिए नीचे दिए गए लिंक पर क्लिक करें। आप अपनी आधिकारिक प्रक्रियाओं के लिए NOC फॉर्म भी डाउनलोड कर सकते हैं।">
+          अपना पंजीकरण पूरा करने के लिए आधिकारिक AICTE ATAL अकादमी पोर्टल पर जाने के लिए नीचे दिए गए लिंक पर क्लिक करें।
+          आप अपनी आधिकारिक प्रक्रियाओं के लिए NOC फॉर्म भी डाउनलोड कर सकते हैं।</p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://atalacademy.aicte.gov.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+            data-en="Register on ATAL Portal" data-hi="ATAL पोर्टल पर पंजीकरण करें"
+            style="background: var(--accent); color: #fff;">ATAL पोर्टल पर पंजीकरण करें</a>
+          <a href="sample-noc.pdf" id="sectionDownloadBtn" class="btn btn-primary" download="AICTE_NOC.pdf"
+            data-en="Download NOC Form" data-hi="NOC फॉर्म डाउनलोड करें"
+            style="background: var(--accent); color: #fff;">NOC फॉर्म डाउनलोड करें</a>
+        </div>
+      </div>
+    </section>
+    <!-- 08 Co-ordinators -->
+    <section class="section" id="contact">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-en="08 — Co-ordinators" data-hi="०८ — समन्वयक">०८ — समन्वयक</p>
+        <h2 class="section-title" data-en="Coordinators" data-hi="समन्वयक">समन्वयक</h2>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <span class="contact-role" data-en="Coordinator" data-hi="समन्वयक">समन्वयक</span>
+            <h3 data-en="Dr. Rakesh Kumar" data-hi="डॉ. राकेश कुमार">Dr. Rakesh Kumar</h3>
+            <p data-en="Professor and Former Head, Department of Computer Science and Engineering, School of Engineering &amp; Technology, Central University of Haryana, Mahendergarh(Haryana)-123031"
+              data-hi="प्रोफेसर एवं पूर्व अध्यक्ष, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031">
+              प्रोफेसर एवं पूर्व अध्यक्ष, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी,
+              केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031</p>
+            <div class="contact-line"><span data-en="Phone" data-hi="फोन">फोन</span>: +91-1285-260188 (O),
+              +91-9416327669 (M)</div>
+          </article>
+          <article class="contact-card">
+            <span class="contact-role" data-en="Co-Coordinator" data-hi="सह-समन्वयक">सह-समन्वयक</span>
+            <h3 data-en="Dr. Nitin Goyal" data-hi="डॉ. नितिन गोयल">Dr. Nitin Goyal</h3>
+            <p data-en="Asst. Professor, Department of Computer Science and Engineering, School of Engineering &amp; Technology, Central University of Haryana, Mahendergarh(Haryana)-123031"
+              data-hi="सहायक प्रोफेसर, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031">
+              सहायक प्रोफेसर, कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग, स्कूल ऑफ इंजीनियरिंग एंड टेक्नोलॉजी, केंद्रीय
+              विश्वविद्यालय हरियाणा, महेंद्रगढ़ (हरियाणा)–123031</p>
+            <div class="contact-line"><span data-en="Phone" data-hi="फोन">फोन</span>: +91-1285-260247 (O),
+              +91-9896530089 (M)</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="committee">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-en="09 — Committee" data-hi="०९ — समिति">०९ — समिति</p>
+        <h2 class="section-title" data-en="Committee Members" data-hi="समिति के सदस्य एवं स्वयंसेवक">समिति के सदस्य एवं
+          स्वयंसेवक</h2>
+
+        <!-- Core Leadership / Patrons Section -->
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Leadership & Patrons"
+            data-hi="मुख्य संरक्षक एवं अधिकारी">मुख्य संरक्षक एवं अधिकारी</h3>
+          <div class="speakers-grid">
+            <article class="speaker-card">
+              <div class="speaker-avatar">🏛️</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Prof. (Dr.) Tankeshwar Kumar" data-hi="प्रो. (डॉ.) टंकेश्वर कुमार">
+                  Prof. (Dr.) Tankeshwar Kumar</h3>
+                <p class="speaker-affil" data-en="Chief Patron (Vice-Chancellor)" data-hi="मुख्य संरक्षक (कुलपति)">Chief
+                  Patron</p>
+                <p style="font-size: 0.75rem; opacity: 0.7; margin: 0.1rem 0 0 0;" data-en="Vice-Chancellor"
+                  data-hi="कुलपति">Vice-Chancellor</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">🏛️</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Prof. (Dr.) Pawan Kumar Sharma" data-hi="प्रो. (डॉ.) पवन कुमार शर्मा">
+                  Prof. (Dr.) Pawan Kumar Sharma</h3>
+                <p class="speaker-affil" data-en="Patron (Pro-Vice-Chancellor)" data-hi="संरक्षक (प्रतिकुलपति)">Patron
+                </p>
+                <p style="font-size: 0.75rem; opacity: 0.7; margin: 0.1rem 0 0 0;" data-en="Pro-Vice-Chancellor"
+                  data-hi="प्रतिकुलपति">Pro-Vice-Chancellor</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">🏛️</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Prof. (Dr.) Suneel Kumar" data-hi="प्रो. (डॉ.) सुनील कुमार">Prof.
+                  (Dr.) Suneel Kumar</h3>
+                <p class="speaker-affil" data-en="Co-Patron (Registrar)" data-hi="सह-संरक्षक (कुलसचिव)">Co-Patron</p>
+                <p style="font-size: 0.75rem; opacity: 0.7; margin: 0.1rem 0 0 0;" data-en="Registrar"
+                  data-hi="कुलसचिव">Registrar</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">🏛️</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Prof. (Dr.) Vikas Garg" data-hi="प्रो. (डॉ.) विकास गर्ग">Prof. (Dr.)
+                  Vikas Garg</h3>
+                <p class="speaker-affil" data-en="Chairperson & Dean, SoET" data-hi="अध्यक्ष एवं डीन, सोएट">Chairperson
+                  & Dean, SoET</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">🏛️</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Dr. Vipin Kumar" data-hi="डॉ. विपिन कुमार">Dr. Vipin Kumar</h3>
+                <p class="speaker-affil" data-en="Co-Chairperson & HoD CSE"
+                  data-hi="सह-अध्यक्ष एवं विभागाध्यक्ष (कंप्यूटर साइंस)">Co-Chairperson & HoD CSE</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">📋</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Prof. (Dr.) Rakesh Kumar" data-hi="प्रो. (डॉ.) राकेश कुमार">Prof.
+                  (Dr.) Rakesh Kumar</h3>
+                <p class="speaker-affil" data-en="Convener" data-hi="संयोजक">Convener</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">📋</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Dr. Nitin Goyal" data-hi="डॉ. नितिन गोयल">Dr. Nitin Goyal</h3>
+                <p class="speaker-affil" data-en="Co-Convener" data-hi="सह-संयोजक">Co-Convener</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- Faculty Members Section -->
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Faculty Members" data-hi="संकाय सदस्य">संकाय
+            सदस्य</h3>
+          <div class="speakers-grid">
+            <article class="speaker-card">
+              <div class="speaker-avatar">👨‍🏫</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Dr. Vishal Passricha" data-hi="डॉ. विशाल पसरीचा">Dr. Vishal Passricha
+                </h3>
+                <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor
+                </p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">👨‍🏫</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Dr. Sushil Kumar" data-hi="डॉ. सुशील कुमार">Dr. Sushil Kumar</h3>
+                <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor
+                </p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">👨‍🏫</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Mr. Anant Rajee Bara" data-hi="श्री अनंत राजी बारा">Mr. Anant Rajee
+                  Bara</h3>
+                <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor
+                </p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">👩‍🏫</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Dr. Sangeeta" data-hi="डॉ. संगीता">Dr. Sangeeta</h3>
+                <p class="speaker-affil" data-en="Assistant Professor" data-hi="सहायक प्राध्यापक">Assistant Professor
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Technical Support Section -->
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Technical Support" data-hi="तकनीकी सहायता">
+            तकनीकी सहायता</h3>
+          <div class="speakers-grid">
+            <article class="speaker-card">
+              <div class="speaker-avatar">💻</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Mr. Amit Sheron" data-hi="श्री अमित शेरोन">Mr. Amit Sheron</h3>
+                <p class="speaker-affil" data-en="System Analyst" data-hi="सिस्टम विश्लेषक">System Analyst</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">💻</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Mr. Rahul Sharma" data-hi="श्री राहुल शर्मा">Mr. Rahul Sharma</h3>
+                <p class="speaker-affil" data-en="Senior Technical Assistant" data-hi="वरिष्ठ तकनीकी सहायक">Senior
+                  Technical Assistant</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">💻</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Mr. Arun" data-hi="श्री अरुण">Mr. Arun</h3>
+                <p class="speaker-affil" data-en="Laboratory Assistant" data-hi="प्रयोगशाला सहायक">Laboratory Assistant
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Student Volunteers Section -->
+        <div>
+          <h3 style="margin-bottom: 1.25rem; font-size: 1.5rem;" data-en="Student Volunteers" data-hi="छात्र स्वयंसेवक">
+            छात्र स्वयंसेवक</h3>
+          <div class="speakers-grid">
+            <article class="speaker-card">
+              <div class="speaker-avatar">💻</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Mr. Harsh Sharma" data-hi="श्री हर्ष शर्मा">Mr. Harsh Sharma</h3>
+                <p class="speaker-affil" data-en="Developer" data-hi="डेवलपर">Developer</p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-avatar">💻</div>
+              <div class="speaker-info">
+                <h3 class="speaker-name" data-en="Mr. Abhishek Kumar" data-hi="श्री अभिषेक कुमार">Mr. Abhishek Kumar
+                </h3>
+                <p class="speaker-affil" data-en="Developer" data-hi="डेवलपर">Developer</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong data-en="AICTE Sponsored National Seminar" data-hi="AICTE प्रायोजित राष्ट्रीय संगोष्ठी">AICTE प्रायोजित
+          राष्ट्रीय संगोष्ठी</strong>
+        <span data-en="Department of Computer Science &amp; Engineering · Central University of Haryana"
+          data-hi="कंप्यूटर विज्ञान एवं इंजीनियरिंग विभाग · केंद्रीय विश्वविद्यालय हरियाणा">कंप्यूटर विज्ञान एवं
+          इंजीनियरिंग विभाग · केंद्रीय विश्वविद्यालय हरियाणा</span>
+      </div>
+      <div class="footer-meta">
+        <span>15–16 Oct 2026</span>
+        <span data-en="Mahendergarh, Haryana" data-hi="महेंद्रगढ़, हरियाणा">महेंद्रगढ़, हरियाणा</span>
+      </div>
+    </div>
+    <div class="footer-bottom" data-en="© 2026 Central University of Haryana. All rights reserved."
+      data-hi="© 2026 केंद्रीय विश्वविद्यालय हरियाणा। सर्वाधिकार सुरक्षित।">© 2026 केंद्रीय विश्वविद्यालय हरियाणा।
+      सर्वाधिकार सुरक्षित।</div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-</html>
 
+</html>
